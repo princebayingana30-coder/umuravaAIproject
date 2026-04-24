@@ -1,0 +1,617 @@
+[
+  {
+    "basicInfo": {
+      "firstName": "Amara",
+      "lastName": "Diallo",
+      "email": "amara.diallo@email.com",
+      "headline": "Senior Full-Stack Engineer | React & Node.js Expert",
+      "bio": "5+ years building scalable web applications for fintech and e-commerce. Passionate about clean architecture and developer experience.",
+      "location": "Kigali, Rwanda"
+    },
+    "skills": [
+      { "name": "React", "level": "Expert", "yearsOfExperience": 5 },
+      { "name": "Node.js", "level": "Expert", "yearsOfExperience": 5 },
+      { "name": "TypeScript", "level": "Advanced", "yearsOfExperience": 4 },
+      { "name": "PostgreSQL", "level": "Advanced", "yearsOfExperience": 4 },
+      { "name": "AWS", "level": "Intermediate", "yearsOfExperience": 3 },
+      { "name": "Docker", "level": "Intermediate", "yearsOfExperience": 2 }
+    ],
+    "experience": [
+      {
+        "company": "Fintech Africa Ltd",
+        "role": "Senior Software Engineer",
+        "startDate": "2022-03",
+        "endDate": null,
+        "description": "Lead engineer for payment processing platform serving 200K+ users. Built microservices architecture that reduced latency by 40%. Mentored team of 4 junior engineers.",
+        "technologies": ["React", "Node.js", "TypeScript", "PostgreSQL", "Redis", "AWS"],
+        "isCurrent": true
+      },
+      {
+        "company": "Digital Commerce Rwanda",
+        "role": "Full Stack Developer",
+        "startDate": "2020-01",
+        "endDate": "2022-02",
+        "description": "Developed e-commerce platform from scratch serving 50K+ monthly active users. Implemented real-time inventory management and payment integration.",
+        "technologies": ["React", "Express", "MongoDB", "Stripe API"],
+        "isCurrent": false
+      }
+    ],
+    "education": {
+      "institution": "University of Rwanda",
+      "degree": "Bachelor of Science",
+      "fieldOfStudy": "Computer Science",
+      "startYear": 2016,
+      "endYear": 2020
+    },
+    "certifications": [
+      { "name": "AWS Certified Developer", "issuer": "Amazon Web Services", "issueDate": "2023-06" },
+      { "name": "MongoDB Certified Developer", "issuer": "MongoDB", "issueDate": "2022-09" }
+    ],
+    "projects": [
+      {
+        "name": "PayStream",
+        "description": "Real-time payment processing dashboard with fraud detection, serving 50+ merchant clients. Built with React, Node.js, and WebSockets.",
+        "technologies": ["React", "Node.js", "WebSockets", "PostgreSQL"],
+        "role": "Lead Developer",
+        "link": "https://github.com/amaradiallo/paystream",
+        "dates": { "start": "2023-01", "end": "2023-06" }
+      }
+    ],
+    "availability": { "status": "Open to Opportunities", "type": "Full-time", "startDate": "2026-05-01" },
+    "socialLinks": {
+      "linkedin": "https://linkedin.com/in/amaradiallo",
+      "github": "https://github.com/amaradiallo",
+      "portfolio": "https://amara.dev"
+    }
+  },
+  {
+    "basicInfo": {
+      "firstName": "Kwame",
+      "lastName": "Mensah",
+      "email": "kwame.mensah@email.com",
+      "headline": "Machine Learning Engineer | Python & TensorFlow",
+      "bio": "ML Engineer with 4 years experience deploying production ML models. Focused on NLP and recommendation systems.",
+      "location": "Accra, Ghana"
+    },
+    "skills": [
+      { "name": "Python", "level": "Expert", "yearsOfExperience": 6 },
+      { "name": "TensorFlow", "level": "Advanced", "yearsOfExperience": 4 },
+      { "name": "PyTorch", "level": "Advanced", "yearsOfExperience": 3 },
+      { "name": "FastAPI", "level": "Advanced", "yearsOfExperience": 3 },
+      { "name": "Docker", "level": "Advanced", "yearsOfExperience": 3 },
+      { "name": "Kubernetes", "level": "Intermediate", "yearsOfExperience": 2 }
+    ],
+    "experience": [
+      {
+        "company": "AfriML Solutions",
+        "role": "Machine Learning Engineer",
+        "startDate": "2021-07",
+        "endDate": null,
+        "description": "Built and deployed NLP models for multilingual text classification serving 1M+ requests/day. Improved model accuracy by 23% using custom fine-tuning pipeline. Deployed on GCP Kubernetes cluster.",
+        "technologies": ["Python", "TensorFlow", "Kubernetes", "GCP", "FastAPI"],
+        "isCurrent": true
+      },
+      {
+        "company": "DataHub Ghana",
+        "role": "Data Scientist",
+        "startDate": "2019-03",
+        "endDate": "2021-06",
+        "description": "Developed recommendation engine for e-commerce increasing click-through rate by 35%. Built automated ETL pipelines processing 10GB+ daily.",
+        "technologies": ["Python", "Spark", "SQL", "Scikit-learn"],
+        "isCurrent": false
+      }
+    ],
+    "education": {
+      "institution": "University of Ghana",
+      "degree": "Master of Science",
+      "fieldOfStudy": "Data Science",
+      "startYear": 2017,
+      "endYear": 2019
+    },
+    "certifications": [
+      { "name": "Google Professional ML Engineer", "issuer": "Google", "issueDate": "2023-04" },
+      { "name": "Kubernetes Administrator (CKA)", "issuer": "CNCF", "issueDate": "2022-11" }
+    ],
+    "projects": [
+      {
+        "name": "LinguaAI",
+        "description": "Multilingual NLP API for African languages supporting 12 language pairs. 98% uptime serving 500K daily requests.",
+        "technologies": ["Python", "FastAPI", "TensorFlow", "Docker", "GCP"],
+        "role": "Creator & Lead Engineer",
+        "link": "https://github.com/kwamemensah/linguaai",
+        "dates": { "start": "2022-06", "end": "2023-01" }
+      }
+    ],
+    "availability": { "status": "Available", "type": "Full-time", "startDate": "2026-04-15" },
+    "socialLinks": {
+      "linkedin": "https://linkedin.com/in/kwamemensah",
+      "github": "https://github.com/kwamemensah"
+    }
+  },
+  {
+    "basicInfo": {
+      "firstName": "Fatima",
+      "lastName": "Al-Rashid",
+      "email": "fatima.alrashid@email.com",
+      "headline": "Frontend Engineer | React, Next.js & UI/UX",
+      "bio": "3 years experience building beautiful, performant user interfaces. Specialise in design systems and accessibility.",
+      "location": "Nairobi, Kenya"
+    },
+    "skills": [
+      { "name": "React", "level": "Expert", "yearsOfExperience": 3 },
+      { "name": "Next.js", "level": "Expert", "yearsOfExperience": 3 },
+      { "name": "TypeScript", "level": "Advanced", "yearsOfExperience": 2 },
+      { "name": "Tailwind CSS", "level": "Expert", "yearsOfExperience": 3 },
+      { "name": "Figma", "level": "Advanced", "yearsOfExperience": 4 },
+      { "name": "GraphQL", "level": "Intermediate", "yearsOfExperience": 1 }
+    ],
+    "experience": [
+      {
+        "company": "Andela",
+        "role": "Frontend Engineer",
+        "startDate": "2023-01",
+        "endDate": null,
+        "description": "Core engineer on Andela's talent marketplace frontend. Built responsive component library used across 5 products. Improved Core Web Vitals scores by 60% through performance optimizations.",
+        "technologies": ["React", "Next.js", "TypeScript", "GraphQL", "Tailwind CSS"],
+        "isCurrent": true
+      },
+      {
+        "company": "Ushahidi",
+        "role": "UI Developer",
+        "startDate": "2021-06",
+        "endDate": "2022-12",
+        "description": "Redesigned crisis reporting platform UI serving NGOs in 40+ countries. Implemented WCAG 2.1 AA accessibility standards.",
+        "technologies": ["React", "CSS", "JavaScript", "Vue.js"],
+        "isCurrent": false
+      }
+    ],
+    "education": {
+      "institution": "Strathmore University",
+      "degree": "Bachelor of Science",
+      "fieldOfStudy": "Information Technology",
+      "startYear": 2017,
+      "endYear": 2021
+    },
+    "certifications": [
+      { "name": "Google UX Design Certificate", "issuer": "Google", "issueDate": "2022-03" }
+    ],
+    "projects": [
+      {
+        "name": "DesignSystem.af",
+        "description": "Open-source React component library with 40+ components, full dark mode support and WCAG 2.1 AA compliance. 800+ GitHub stars.",
+        "technologies": ["React", "TypeScript", "Storybook", "Tailwind CSS"],
+        "role": "Creator & Maintainer",
+        "link": "https://github.com/fatimaalrashid/designsystem",
+        "dates": { "start": "2022-09", "end": null }
+      }
+    ],
+    "availability": { "status": "Open to Opportunities", "type": "Full-time", "startDate": "2026-06-01" },
+    "socialLinks": {
+      "linkedin": "https://linkedin.com/in/fatimaalrashid",
+      "github": "https://github.com/fatimaalrashid",
+      "portfolio": "https://fatima.design"
+    }
+  },
+  {
+    "basicInfo": {
+      "firstName": "Chidi",
+      "lastName": "Okonkwo",
+      "email": "chidi.okonkwo@email.com",
+      "headline": "DevOps / Cloud Engineer | AWS & Terraform",
+      "bio": "Infrastructure engineer specialising in AWS cloud architecture and CI/CD automation. 4 years reducing deployment times and infrastructure costs.",
+      "location": "Lagos, Nigeria"
+    },
+    "skills": [
+      { "name": "AWS", "level": "Expert", "yearsOfExperience": 4 },
+      { "name": "Terraform", "level": "Expert", "yearsOfExperience": 3 },
+      { "name": "Docker", "level": "Advanced", "yearsOfExperience": 4 },
+      { "name": "Kubernetes", "level": "Advanced", "yearsOfExperience": 3 },
+      { "name": "Python", "level": "Intermediate", "yearsOfExperience": 3 },
+      { "name": "CI/CD", "level": "Advanced", "yearsOfExperience": 4 }
+    ],
+    "experience": [
+      {
+        "company": "Flutterwave",
+        "role": "Cloud Infrastructure Engineer",
+        "startDate": "2022-04",
+        "endDate": null,
+        "description": "Managed AWS infrastructure for payment platform processing $1B+ annually. Reduced infrastructure costs by 30% through right-sizing and reserved instances. Built zero-downtime deployment pipelines.",
+        "technologies": ["AWS", "Terraform", "Kubernetes", "GitHub Actions", "Datadog"],
+        "isCurrent": true
+      },
+      {
+        "company": "Interswitch",
+        "role": "DevOps Engineer",
+        "startDate": "2020-02",
+        "endDate": "2022-03",
+        "description": "Automated deployment of 20+ microservices using Jenkins and Docker. Reduced deployment time from 2 hours to 15 minutes.",
+        "technologies": ["Docker", "Jenkins", "AWS EC2", "Bash", "Ansible"],
+        "isCurrent": false
+      }
+    ],
+    "education": {
+      "institution": "University of Lagos",
+      "degree": "Bachelor of Engineering",
+      "fieldOfStudy": "Computer Engineering",
+      "startYear": 2015,
+      "endYear": 2019
+    },
+    "certifications": [
+      { "name": "AWS Solutions Architect Professional", "issuer": "Amazon Web Services", "issueDate": "2023-02" },
+      { "name": "Certified Kubernetes Administrator", "issuer": "CNCF", "issueDate": "2022-08" },
+      { "name": "Terraform Associate", "issuer": "HashiCorp", "issueDate": "2021-11" }
+    ],
+    "projects": [
+      {
+        "name": "InfraBot",
+        "description": "Slack bot for infrastructure automation — spin up AWS environments, trigger deploys, and get cost reports from Slack. Used by 3 teams internally.",
+        "technologies": ["Python", "AWS Lambda", "Terraform", "Slack API"],
+        "role": "Author",
+        "link": "https://github.com/chidiokonkwo/infrabot",
+        "dates": { "start": "2023-03", "end": "2023-08" }
+      }
+    ],
+    "availability": { "status": "Open to Opportunities", "type": "Full-time", "startDate": "2026-05-15" },
+    "socialLinks": {
+      "linkedin": "https://linkedin.com/in/chidiokonkwo",
+      "github": "https://github.com/chidiokonkwo"
+    }
+  },
+  {
+    "basicInfo": {
+      "firstName": "Zara",
+      "lastName": "Nakamura",
+      "email": "zara.nakamura@email.com",
+      "headline": "Backend Engineer | Java & Spring Boot",
+      "bio": "2 years professional experience with Java and Spring Boot. Graduated top of class. Built 3 production APIs used by real users.",
+      "location": "Cape Town, South Africa"
+    },
+    "skills": [
+      { "name": "Java", "level": "Advanced", "yearsOfExperience": 3 },
+      { "name": "Spring Boot", "level": "Intermediate", "yearsOfExperience": 2 },
+      { "name": "SQL", "level": "Intermediate", "yearsOfExperience": 2 },
+      { "name": "REST APIs", "level": "Intermediate", "yearsOfExperience": 2 },
+      { "name": "Git", "level": "Intermediate", "yearsOfExperience": 3 }
+    ],
+    "experience": [
+      {
+        "company": "Nedbank Digital",
+        "role": "Junior Backend Developer",
+        "startDate": "2024-02",
+        "endDate": null,
+        "description": "Developing REST APIs for mobile banking features. Built loan calculator API serving 30K requests/day. Contributed to code review process and test coverage improvements.",
+        "technologies": ["Java", "Spring Boot", "PostgreSQL", "JUnit"],
+        "isCurrent": true
+      }
+    ],
+    "education": {
+      "institution": "University of Cape Town",
+      "degree": "Bachelor of Science",
+      "fieldOfStudy": "Computer Science",
+      "startYear": 2020,
+      "endYear": 2023
+    },
+    "certifications": [],
+    "projects": [
+      {
+        "name": "StudyTrack",
+        "description": "Study planner API for university students with Pomodoro timer integration and progress analytics. 200+ active users.",
+        "technologies": ["Java", "Spring Boot", "MySQL", "React"],
+        "role": "Full Stack Developer",
+        "link": "https://github.com/zaranakamura/studytrack",
+        "dates": { "start": "2022-08", "end": "2023-01" }
+      }
+    ],
+    "availability": { "status": "Available", "type": "Full-time", "startDate": "2026-04-01" },
+    "socialLinks": {
+      "linkedin": "https://linkedin.com/in/zaranakamura",
+      "github": "https://github.com/zaranakamura"
+    }
+  },
+  {
+    "basicInfo": {
+      "firstName": "Moussa",
+      "lastName": "Coulibaly",
+      "email": "moussa.coulibaly@email.com",
+      "headline": "Mobile Engineer | React Native & Flutter",
+      "bio": "Mobile-first developer with 4 years building cross-platform apps. Published 5 apps on Play Store and App Store with 100K+ combined downloads.",
+      "location": "Abidjan, Côte d'Ivoire"
+    },
+    "skills": [
+      { "name": "React Native", "level": "Expert", "yearsOfExperience": 4 },
+      { "name": "Flutter", "level": "Advanced", "yearsOfExperience": 2 },
+      { "name": "JavaScript", "level": "Expert", "yearsOfExperience": 5 },
+      { "name": "TypeScript", "level": "Advanced", "yearsOfExperience": 3 },
+      { "name": "Firebase", "level": "Advanced", "yearsOfExperience": 3 },
+      { "name": "Node.js", "level": "Intermediate", "yearsOfExperience": 2 }
+    ],
+    "experience": [
+      {
+        "company": "Orange Money Africa",
+        "role": "Senior Mobile Developer",
+        "startDate": "2022-09",
+        "endDate": null,
+        "description": "Lead mobile engineer for Orange Money super-app with 2M+ downloads. Shipped 8 major features including biometric auth, QR payments, and airtime top-up. Reduced app crash rate by 75%.",
+        "technologies": ["React Native", "TypeScript", "Firebase", "Redux"],
+        "isCurrent": true
+      },
+      {
+        "company": "Sama Technologie",
+        "role": "Mobile Developer",
+        "startDate": "2020-06",
+        "endDate": "2022-08",
+        "description": "Built 3 mobile apps for local SMEs. Implemented offline-first architecture for low-connectivity environments.",
+        "technologies": ["React Native", "JavaScript", "SQLite", "REST APIs"],
+        "isCurrent": false
+      }
+    ],
+    "education": {
+      "institution": "Institut National Polytechnique Félix Houphouët-Boigny",
+      "degree": "Bachelor of Engineering",
+      "fieldOfStudy": "Software Engineering",
+      "startYear": 2016,
+      "endYear": 2020
+    },
+    "certifications": [
+      { "name": "Google Associate Android Developer", "issuer": "Google", "issueDate": "2021-09" }
+    ],
+    "projects": [
+      {
+        "name": "OkoCash",
+        "description": "Offline-capable mobile wallet app for unbanked users. Supports peer-to-peer transfers via Bluetooth. 15K+ downloads.",
+        "technologies": ["Flutter", "Dart", "Bluetooth LE", "SQLite"],
+        "role": "Founder & Engineer",
+        "link": "https://play.google.com/store/apps/okocash",
+        "dates": { "start": "2021-11", "end": "2022-05" }
+      }
+    ],
+    "availability": { "status": "Open to Opportunities", "type": "Full-time", "startDate": "2026-05-01" },
+    "socialLinks": {
+      "linkedin": "https://linkedin.com/in/moussacoulibaly",
+      "github": "https://github.com/moussacoulibaly"
+    }
+  },
+  {
+    "basicInfo": {
+      "firstName": "Priya",
+      "lastName": "Naidoo",
+      "email": "priya.naidoo@email.com",
+      "headline": "Data Engineer | Spark, Airflow & dbt",
+      "bio": "Data pipeline engineer with 3 years building reliable data infrastructure at scale. Expert in modern data stack.",
+      "location": "Johannesburg, South Africa"
+    },
+    "skills": [
+      { "name": "Python", "level": "Expert", "yearsOfExperience": 4 },
+      { "name": "Apache Spark", "level": "Advanced", "yearsOfExperience": 3 },
+      { "name": "Apache Airflow", "level": "Advanced", "yearsOfExperience": 3 },
+      { "name": "dbt", "level": "Advanced", "yearsOfExperience": 2 },
+      { "name": "SQL", "level": "Expert", "yearsOfExperience": 4 },
+      { "name": "AWS", "level": "Intermediate", "yearsOfExperience": 2 }
+    ],
+    "experience": [
+      {
+        "company": "Discovery Health",
+        "role": "Data Engineer",
+        "startDate": "2022-07",
+        "endDate": null,
+        "description": "Built and maintained data pipelines processing 5TB+ daily health claims data. Reduced pipeline failures by 85% through improved monitoring and retry logic. Migrated legacy ETL to dbt + Airflow.",
+        "technologies": ["Python", "Apache Spark", "Airflow", "dbt", "Redshift", "AWS S3"],
+        "isCurrent": true
+      },
+      {
+        "company": "Woolworths SA",
+        "role": "Junior Data Analyst",
+        "startDate": "2020-11",
+        "endDate": "2022-06",
+        "description": "Developed SQL dashboards for supply chain analytics. Built automated weekly reporting reducing manual work by 20 hours/week.",
+        "technologies": ["SQL", "Python", "Tableau", "Excel"],
+        "isCurrent": false
+      }
+    ],
+    "education": {
+      "institution": "University of Witwatersrand",
+      "degree": "Bachelor of Science",
+      "fieldOfStudy": "Statistics and Computer Science",
+      "startYear": 2016,
+      "endYear": 2020
+    },
+    "certifications": [
+      { "name": "dbt Certified Developer", "issuer": "dbt Labs", "issueDate": "2023-01" },
+      { "name": "AWS Data Analytics Specialty", "issuer": "Amazon Web Services", "issueDate": "2022-10" }
+    ],
+    "projects": [
+      {
+        "name": "HealthPipeline OSS",
+        "description": "Open-source Airflow DAG templates for healthcare data pipelines with FHIR compliance. Used by 3 hospitals.",
+        "technologies": ["Python", "Airflow", "dbt", "PostgreSQL"],
+        "role": "Lead Author",
+        "link": "https://github.com/priyanaidoo/healthpipeline",
+        "dates": { "start": "2023-04", "end": null }
+      }
+    ],
+    "availability": { "status": "Available", "type": "Full-time", "startDate": "2026-04-20" },
+    "socialLinks": {
+      "linkedin": "https://linkedin.com/in/priyanaidoo",
+      "github": "https://github.com/priyanaidoo"
+    }
+  },
+  {
+    "basicInfo": {
+      "firstName": "Ibrahim",
+      "lastName": "Hassan",
+      "email": "ibrahim.hassan@email.com",
+      "headline": "Cybersecurity Engineer | Penetration Testing & SOC",
+      "bio": "Security professional with 5 years in offensive and defensive security. Holds CISSP and CEH. Led 30+ penetration testing engagements.",
+      "location": "Cairo, Egypt"
+    },
+    "skills": [
+      { "name": "Penetration Testing", "level": "Expert", "yearsOfExperience": 5 },
+      { "name": "Python", "level": "Advanced", "yearsOfExperience": 4 },
+      { "name": "Network Security", "level": "Expert", "yearsOfExperience": 5 },
+      { "name": "SIEM", "level": "Advanced", "yearsOfExperience": 3 },
+      { "name": "Kubernetes", "level": "Beginner", "yearsOfExperience": 1 },
+      { "name": "Cloud Security", "level": "Advanced", "yearsOfExperience": 3 }
+    ],
+    "experience": [
+      {
+        "company": "EG-CERT",
+        "role": "Senior Cybersecurity Engineer",
+        "startDate": "2021-01",
+        "endDate": null,
+        "description": "Lead penetration tester for government and financial sector clients. Identified 200+ critical vulnerabilities. Built automated vulnerability scanning pipeline reducing assessment time by 60%.",
+        "technologies": ["Kali Linux", "Metasploit", "Burp Suite", "Python", "SIEM"],
+        "isCurrent": true
+      },
+      {
+        "company": "Vodafone Egypt",
+        "role": "Security Analyst",
+        "startDate": "2018-09",
+        "endDate": "2020-12",
+        "description": "Monitored SOC operations for telecom network. Responded to 500+ security incidents. Implemented SIEM rules reducing false positives by 40%.",
+        "technologies": ["Splunk", "Wireshark", "Nmap", "QRadar"],
+        "isCurrent": false
+      }
+    ],
+    "education": {
+      "institution": "Cairo University",
+      "degree": "Bachelor of Science",
+      "fieldOfStudy": "Computer Science and Information Systems",
+      "startYear": 2014,
+      "endYear": 2018
+    },
+    "certifications": [
+      { "name": "CISSP", "issuer": "ISC2", "issueDate": "2022-05" },
+      { "name": "Certified Ethical Hacker (CEH)", "issuer": "EC-Council", "issueDate": "2020-03" },
+      { "name": "CompTIA Security+", "issuer": "CompTIA", "issueDate": "2019-07" }
+    ],
+    "projects": [
+      {
+        "name": "VulnScanner",
+        "description": "Automated web application vulnerability scanner with OWASP Top 10 coverage. Generates executive reports. Used by 5 security firms.",
+        "technologies": ["Python", "Selenium", "Docker", "SQLite"],
+        "role": "Author",
+        "link": "https://github.com/ibrahimhassan/vulnscanner",
+        "dates": { "start": "2021-06", "end": "2022-01" }
+      }
+    ],
+    "availability": { "status": "Open to Opportunities", "type": "Contract", "startDate": "2026-06-01" },
+    "socialLinks": {
+      "linkedin": "https://linkedin.com/in/ibrahimhassan",
+      "github": "https://github.com/ibrahimhassan"
+    }
+  },
+  {
+    "basicInfo": {
+      "firstName": "Aisha",
+      "lastName": "Traoré",
+      "email": "aisha.traore@email.com",
+      "headline": "Product Engineer | Node.js & Vue.js",
+      "bio": "Product-minded engineer with 2 years experience. Strong in both frontend and backend. Currently completing MSc remotely.",
+      "location": "Dakar, Senegal"
+    },
+    "skills": [
+      { "name": "Node.js", "level": "Intermediate", "yearsOfExperience": 2 },
+      { "name": "Vue.js", "level": "Advanced", "yearsOfExperience": 2 },
+      { "name": "JavaScript", "level": "Advanced", "yearsOfExperience": 3 },
+      { "name": "MongoDB", "level": "Intermediate", "yearsOfExperience": 2 },
+      { "name": "Figma", "level": "Intermediate", "yearsOfExperience": 2 }
+    ],
+    "experience": [
+      {
+        "company": "Wari Sénégal",
+        "role": "Software Engineer",
+        "startDate": "2024-01",
+        "endDate": null,
+        "description": "Built customer-facing features for mobile money platform. Developed SMS notification system handling 100K+ messages/day. Improved UX scores by 25%.",
+        "technologies": ["Node.js", "Vue.js", "MongoDB", "Redis"],
+        "isCurrent": true
+      }
+    ],
+    "education": {
+      "institution": "Université Cheikh Anta Diop",
+      "degree": "Master of Science",
+      "fieldOfStudy": "Software Engineering",
+      "startYear": 2022,
+      "endYear": 2024
+    },
+    "certifications": [],
+    "projects": [
+      {
+        "name": "SenMarket",
+        "description": "Local marketplace web app for Dakar artisans. Supports vendor profiles, product listings, and WhatsApp checkout integration. 300+ registered vendors.",
+        "technologies": ["Vue.js", "Node.js", "MongoDB", "WhatsApp API"],
+        "role": "Co-founder & Engineer",
+        "link": "https://senmarket.sn",
+        "dates": { "start": "2023-03", "end": "2023-10" }
+      }
+    ],
+    "availability": { "status": "Available", "type": "Part-time", "startDate": "2026-04-01" },
+    "socialLinks": {
+      "linkedin": "https://linkedin.com/in/aishatraore",
+      "github": "https://github.com/aishatraore"
+    }
+  },
+  {
+    "basicInfo": {
+      "firstName": "Emeka",
+      "lastName": "Eze",
+      "email": "emeka.eze@email.com",
+      "headline": "Blockchain Engineer | Solidity & Web3",
+      "bio": "Smart contract engineer with 3 years in DeFi and NFT ecosystems. Built protocols managing $500K+ TVL.",
+      "location": "Enugu, Nigeria"
+    },
+    "skills": [
+      { "name": "Solidity", "level": "Expert", "yearsOfExperience": 3 },
+      { "name": "JavaScript", "level": "Advanced", "yearsOfExperience": 4 },
+      { "name": "TypeScript", "level": "Intermediate", "yearsOfExperience": 2 },
+      { "name": "React", "level": "Intermediate", "yearsOfExperience": 2 },
+      { "name": "Web3.js", "level": "Expert", "yearsOfExperience": 3 },
+      { "name": "Hardhat", "level": "Advanced", "yearsOfExperience": 2 }
+    ],
+    "experience": [
+      {
+        "company": "BitSpark Africa",
+        "role": "Blockchain Engineer",
+        "startDate": "2022-05",
+        "endDate": null,
+        "description": "Developed and deployed 12 smart contracts on Ethereum and Polygon. Audited 5 third-party contracts. Engineered cross-chain bridge protocol managing $500K TVL.",
+        "technologies": ["Solidity", "Hardhat", "Web3.js", "Ethereum", "Polygon"],
+        "isCurrent": true
+      },
+      {
+        "company": "Freelance",
+        "role": "Smart Contract Developer",
+        "startDate": "2020-11",
+        "endDate": "2022-04",
+        "description": "Developed NFT minting contracts and DeFi staking mechanisms for 8 client projects.",
+        "technologies": ["Solidity", "Truffle", "OpenZeppelin", "React"],
+        "isCurrent": false
+      }
+    ],
+    "education": {
+      "institution": "University of Nigeria Nsukka",
+      "degree": "Bachelor of Science",
+      "fieldOfStudy": "Computer Science",
+      "startYear": 2015,
+      "endYear": 2019
+    },
+    "certifications": [
+      { "name": "Certified Ethereum Developer", "issuer": "Blockchain Council", "issueDate": "2021-08" }
+    ],
+    "projects": [
+      {
+        "name": "AfriDAO",
+        "description": "Decentralised governance protocol for African community investment pools. 120 DAO members, $180K treasury managed on-chain.",
+        "technologies": ["Solidity", "Hardhat", "React", "Ethers.js", "IPFS"],
+        "role": "Protocol Engineer",
+        "link": "https://github.com/emekaeze/afridao",
+        "dates": { "start": "2023-01", "end": "2023-07" }
+      }
+    ],
+    "availability": { "status": "Open to Opportunities", "type": "Full-time", "startDate": "2026-05-01" },
+    "socialLinks": {
+      "linkedin": "https://linkedin.com/in/emekaeze",
+      "github": "https://github.com/emekaeze"
+    }
+  }
+]

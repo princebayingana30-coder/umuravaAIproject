@@ -1,0 +1,73 @@
+
+> client@0.1.0 lint
+> eslint
+
+
+/Users/digitalaxis/Desktop/umurava Ai project/client/refactorTheme.js
+  1:12  error  A `require()` style import is forbidden  @typescript-eslint/no-require-imports
+  2:14  error  A `require()` style import is forbidden  @typescript-eslint/no-require-imports
+
+/Users/digitalaxis/Desktop/umurava Ai project/client/src/app/candidate/profile/page.tsx
+   3:27  warning  'useEffect' is defined but never used               @typescript-eslint/no-unused-vars
+   8:25  warning  'Target' is defined but never used                  @typescript-eslint/no-unused-vars
+  39:22  warning  'setAiInsights' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+/Users/digitalaxis/Desktop/umurava Ai project/client/src/app/candidates/add/page.tsx
+  3:27  warning  'useRef' is defined but never used  @typescript-eslint/no-unused-vars
+
+/Users/digitalaxis/Desktop/umurava Ai project/client/src/app/login/page.tsx
+   9:41  warning  'ShieldCheck' is defined but never used            @typescript-eslint/no-unused-vars
+   9:54  warning  'ChevronDown' is defined but never used            @typescript-eslint/no-unused-vars
+   9:67  warning  'ChevronUp' is defined but never used              @typescript-eslint/no-unused-vars
+  48:10  warning  'isDevMode' is assigned a value but never used     @typescript-eslint/no-unused-vars
+  48:21  warning  'setIsDevMode' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+/Users/digitalaxis/Desktop/umurava Ai project/client/src/app/page.tsx
+    7:8   warning  'Brain' is defined but never used         @typescript-eslint/no-unused-vars
+    8:14  warning  'ShieldCheck' is defined but never used   @typescript-eslint/no-unused-vars
+    8:27  warning  'Users' is defined but never used         @typescript-eslint/no-unused-vars
+    8:34  warning  'ChevronRight' is defined but never used  @typescript-eslint/no-unused-vars
+    8:48  warning  'Cpu' is defined but never used           @typescript-eslint/no-unused-vars
+    8:53  warning  'Layers' is defined but never used        @typescript-eslint/no-unused-vars
+    9:3   warning  'Target' is defined but never used        @typescript-eslint/no-unused-vars
+    9:11  warning  'CheckCircle' is defined but never used   @typescript-eslint/no-unused-vars
+    9:24  warning  'Clock' is defined but never used         @typescript-eslint/no-unused-vars
+    9:31  warning  'Award' is defined but never used         @typescript-eslint/no-unused-vars
+    9:50  warning  'Star' is defined but never used          @typescript-eslint/no-unused-vars
+   10:3   warning  'Verified' is defined but never used      @typescript-eslint/no-unused-vars
+   10:13  warning  'BarChart4' is defined but never used     @typescript-eslint/no-unused-vars
+   10:24  warning  'Gauge' is defined but never used         @typescript-eslint/no-unused-vars
+  215:51  warning  'i' is defined but never used             @typescript-eslint/no-unused-vars
+
+/Users/digitalaxis/Desktop/umurava Ai project/client/src/app/screening/[jobId]/page.tsx
+    7:17  warning  'Users' is defined but never used                                                                      @typescript-eslint/no-unused-vars
+    7:24  warning  'CheckCircle' is defined but never used                                                                @typescript-eslint/no-unused-vars
+   46:3   warning  Unused eslint-disable directive (no problems were reported from '@typescript-eslint/no-explicit-any')
+  519:85  warning  'idx' is defined but never used                                                                        @typescript-eslint/no-unused-vars
+
+/Users/digitalaxis/Desktop/umurava Ai project/client/src/components/ProtectedRoute.tsx
+  20:7  error  Error: Calling setState synchronously within an effect can trigger cascading renders
+
+Effects are intended to synchronize state between React and external systems such as manually updating the DOM, state management libraries, or other platform APIs. In general, the body of an effect should do one or both of the following:
+* Update external systems with the latest state from React.
+* Subscribe for updates from some external system, calling setState in a callback function when external state changes.
+
+Calling setState synchronously within an effect body causes cascading renders that can hurt performance, and is not recommended. (https://react.dev/learn/you-might-not-need-an-effect).
+
+/Users/digitalaxis/Desktop/umurava Ai project/client/src/components/ProtectedRoute.tsx:20:7
+  18 |     
+  19 |     if (token || storedToken || PUBLIC_ROUTES.includes(pathname)) {
+> 20 |       setIsChecking(false);
+     |       ^^^^^^^^^^^^^ Avoid calling setState() directly within an effect
+  21 |     } else {
+  22 |       router.push('/login');
+  23 |     }  react-hooks/set-state-in-effect
+
+/Users/digitalaxis/Desktop/umurava Ai project/client/src/components/candidate/ProfileForm.tsx
+  8:3   warning  'ExternalLink' is defined but never used  @typescript-eslint/no-unused-vars
+  8:17  warning  'Mail' is defined but never used          @typescript-eslint/no-unused-vars
+  8:23  warning  'Award' is defined but never used         @typescript-eslint/no-unused-vars
+
+✖ 34 problems (3 errors, 31 warnings)
+  0 errors and 1 warning potentially fixable with the `--fix` option.
+

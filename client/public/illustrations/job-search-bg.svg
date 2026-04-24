@@ -1,0 +1,139 @@
+<svg width="1600" height="900" viewBox="0 0 1600 900" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="g1" x1="0" y1="0" x2="1600" y2="900" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#0B1220"/>
+      <stop offset="1" stop-color="#070A12"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(1180 220) rotate(120) scale(520 520)">
+      <stop stop-color="#2563EB" stop-opacity="0.28"/>
+      <stop offset="1" stop-color="#2563EB" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="glow2" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(360 640) rotate(25) scale(560 560)">
+      <stop stop-color="#7C3AED" stop-opacity="0.18"/>
+      <stop offset="1" stop-color="#7C3AED" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="blur" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="12"/>
+    </filter>
+    <style>
+      .line{stroke:#94A3B8;stroke-opacity:.18;stroke-width:2}
+      .panel{fill:#0F172A;fill-opacity:.45;stroke:#334155;stroke-opacity:.35}
+      .accent{fill:#2563EB;fill-opacity:.55}
+      .accent2{fill:#7C3AED;fill-opacity:.45}
+      .skin{fill:#E2E8F0;fill-opacity:.75}
+      .hair{fill:#94A3B8;fill-opacity:.45}
+      .shadow{fill:#000;fill-opacity:.18}
+      .doc{fill:#111827;fill-opacity:.55;stroke:#334155;stroke-opacity:.45}
+      .docLine{stroke:#CBD5E1;stroke-opacity:.18;stroke-width:2}
+      .laptop{fill:#0B1220;fill-opacity:.55;stroke:#334155;stroke-opacity:.5}
+      .laptopScreen{fill:#0B1220;fill-opacity:.35;stroke:#2563EB;stroke-opacity:.25}
+    </style>
+  </defs>
+
+  <!-- base -->
+  <rect width="1600" height="900" fill="url(#g1)"/>
+  <rect width="1600" height="900" fill="url(#glow)"/>
+  <rect width="1600" height="900" fill="url(#glow2)"/>
+
+  <!-- subtle grid -->
+  <g opacity="0.55">
+    <path class="line" d="M0 130H1600"/>
+    <path class="line" d="M0 260H1600"/>
+    <path class="line" d="M0 390H1600"/>
+    <path class="line" d="M0 520H1600"/>
+    <path class="line" d="M0 650H1600"/>
+    <path class="line" d="M0 780H1600"/>
+    <path class="line" d="M180 0V900"/>
+    <path class="line" d="M420 0V900"/>
+    <path class="line" d="M660 0V900"/>
+    <path class="line" d="M900 0V900"/>
+    <path class="line" d="M1140 0V900"/>
+    <path class="line" d="M1380 0V900"/>
+  </g>
+
+  <!-- background panels / UI cards -->
+  <g filter="url(#blur)" opacity="0.9">
+    <rect x="230" y="150" rx="28" ry="28" width="520" height="280" class="panel"/>
+    <rect x="870" y="110" rx="28" ry="28" width="520" height="310" class="panel"/>
+    <rect x="560" y="520" rx="28" ry="28" width="520" height="280" class="panel"/>
+  </g>
+
+  <!-- document stacks -->
+  <g opacity="0.85">
+    <rect x="292" y="212" width="210" height="150" rx="16" class="doc"/>
+    <path class="docLine" d="M316 252H478"/>
+    <path class="docLine" d="M316 282H460"/>
+    <path class="docLine" d="M316 312H432"/>
+    <rect x="320" y="238" width="62" height="10" rx="5" class="accent"/>
+
+    <rect x="1010" y="190" width="240" height="170" rx="18" class="doc"/>
+    <path class="docLine" d="M1040 236H1226"/>
+    <path class="docLine" d="M1040 268H1208"/>
+    <path class="docLine" d="M1040 300H1160"/>
+    <rect x="1040" y="214" width="76" height="10" rx="5" class="accent2"/>
+  </g>
+
+  <!-- people (stylized) -->
+  <!-- Person left holding document -->
+  <g opacity="0.92">
+    <ellipse cx="360" cy="740" rx="140" ry="34" class="shadow"/>
+    <circle cx="320" cy="575" r="42" class="skin"/>
+    <path d="M290 560C294 538 308 524 326 524C344 524 358 538 362 560C350 568 336 572 326 572C314 572 302 568 290 560Z" class="hair"/>
+    <path d="M260 670C262 622 288 596 320 596C352 596 378 622 380 670C350 690 312 690 260 670Z" fill="#0B1220" fill-opacity="0.45" stroke="#334155" stroke-opacity="0.5"/>
+    <path d="M260 668C252 708 250 742 252 772C278 790 308 796 340 796C370 796 396 790 418 778C420 744 414 710 402 668" fill="#0F172A" fill-opacity="0.5" stroke="#334155" stroke-opacity="0.45"/>
+    <!-- document in hand -->
+    <rect x="402" y="610" width="120" height="150" rx="14" class="doc"/>
+    <path class="docLine" d="M420 650H504"/>
+    <path class="docLine" d="M420 678H492"/>
+    <path class="docLine" d="M420 706H476"/>
+    <rect x="420" y="630" width="52" height="10" rx="5" class="accent"/>
+  </g>
+
+  <!-- Person center on laptop -->
+  <g opacity="0.92">
+    <ellipse cx="820" cy="760" rx="170" ry="38" class="shadow"/>
+    <circle cx="780" cy="560" r="46" class="skin"/>
+    <path d="M744 552C748 528 765 512 786 512C808 512 825 528 830 552C816 560 800 566 786 566C770 566 756 560 744 552Z" class="hair"/>
+    <path d="M708 676C714 622 744 592 784 592C824 592 854 622 860 676C824 700 760 702 708 676Z" fill="#0B1220" fill-opacity="0.45" stroke="#334155" stroke-opacity="0.5"/>
+    <!-- laptop -->
+    <rect x="700" y="690" width="280" height="44" rx="14" class="laptop"/>
+    <rect x="732" y="604" width="216" height="92" rx="14" class="laptopScreen"/>
+    <path class="docLine" d="M756 632H922"/>
+    <path class="docLine" d="M756 656H900"/>
+    <rect x="756" y="616" width="70" height="10" rx="5" class="accent2"/>
+  </g>
+
+  <!-- Person right reviewing documents with laptop -->
+  <g opacity="0.92">
+    <ellipse cx="1240" cy="740" rx="150" ry="34" class="shadow"/>
+    <circle cx="1260" cy="565" r="44" class="skin"/>
+    <path d="M1230 552C1234 530 1250 514 1270 514C1290 514 1306 530 1310 552C1296 560 1282 566 1270 566C1256 566 1242 560 1230 552Z" class="hair"/>
+    <path d="M1188 676C1194 624 1222 596 1260 596C1298 596 1326 624 1332 676C1298 696 1222 696 1188 676Z" fill="#0B1220" fill-opacity="0.45" stroke="#334155" stroke-opacity="0.5"/>
+    <!-- laptop + doc -->
+    <rect x="1130" y="688" width="260" height="42" rx="14" class="laptop"/>
+    <rect x="1160" y="606" width="200" height="86" rx="14" class="laptopScreen"/>
+    <path class="docLine" d="M1182 632H1342"/>
+    <path class="docLine" d="M1182 654H1320"/>
+    <rect x="1182" y="616" width="64" height="10" rx="5" class="accent"/>
+
+    <rect x="1364" y="604" width="124" height="152" rx="14" class="doc" opacity="0.9"/>
+    <path class="docLine" d="M1382 646H1474"/>
+    <path class="docLine" d="M1382 674H1460"/>
+    <path class="docLine" d="M1382 702H1440"/>
+    <rect x="1382" y="624" width="48" height="10" rx="5" class="accent2"/>
+  </g>
+
+  <!-- floating icons -->
+  <g opacity="0.7">
+    <circle cx="620" cy="210" r="34" class="panel"/>
+    <path d="M606 210H634" class="docLine"/>
+    <path d="M606 222H626" class="docLine"/>
+    <rect x="606" y="196" width="18" height="10" rx="5" class="accent"/>
+
+    <circle cx="1120" cy="520" r="34" class="panel"/>
+    <path d="M1106 520H1134" class="docLine"/>
+    <path d="M1106 532H1126" class="docLine"/>
+    <rect x="1106" y="506" width="18" height="10" rx="5" class="accent2"/>
+  </g>
+</svg>
+

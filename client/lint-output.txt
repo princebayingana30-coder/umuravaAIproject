@@ -1,0 +1,50 @@
+
+> client@0.1.0 lint
+> eslint
+
+
+/Users/digitalaxis/Desktop/umurava Ai project/client/src/app/dashboard/page.tsx
+   25:11  warning  'AnalyticsData' is defined but never used  @typescript-eslint/no-unused-vars
+   82:46  error    Unexpected any. Specify a different type   @typescript-eslint/no-explicit-any
+  221:47  error    Unexpected any. Specify a different type   @typescript-eslint/no-explicit-any
+  277:59  error    Unexpected any. Specify a different type   @typescript-eslint/no-explicit-any
+
+/Users/digitalaxis/Desktop/umurava Ai project/client/src/app/login/page.tsx
+   6:21  warning  'clearError' is defined but never used              @typescript-eslint/no-unused-vars
+  20:10  warning  'googleLoading' is assigned a value but never used  @typescript-eslint/no-unused-vars
+  36:58  error    Unexpected any. Specify a different type            @typescript-eslint/no-explicit-any
+
+/Users/digitalaxis/Desktop/umurava Ai project/client/src/app/screening/[jobId]/page.tsx
+    7:24  warning  'FileText' is defined but never used                                                                          @typescript-eslint/no-unused-vars
+   14:34  error    Unexpected any. Specify a different type                                                                      @typescript-eslint/no-explicit-any
+   15:42  error    Unexpected any. Specify a different type                                                                      @typescript-eslint/no-explicit-any
+   19:62  error    Unexpected any. Specify a different type                                                                      @typescript-eslint/no-explicit-any
+   24:6   warning  React Hook useEffect has a missing dependency: 'fetchData'. Either include it or remove the dependency array  react-hooks/exhaustive-deps
+   67:35  error    Unexpected any. Specify a different type                                                                      @typescript-eslint/no-explicit-any
+  313:25  error    `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`                                               react/no-unescaped-entities
+  313:60  error    `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`                                               react/no-unescaped-entities
+  367:89  error    Unexpected any. Specify a different type                                                                      @typescript-eslint/no-explicit-any
+
+/Users/digitalaxis/Desktop/umurava Ai project/client/src/components/ProtectedRoute.tsx
+  23:5  error  Error: Calling setState synchronously within an effect can trigger cascading renders
+
+Effects are intended to synchronize state between React and external systems such as manually updating the DOM, state management libraries, or other platform APIs. In general, the body of an effect should do one or both of the following:
+* Update external systems with the latest state from React.
+* Subscribe for updates from some external system, calling setState in a callback function when external state changes.
+
+Calling setState synchronously within an effect body causes cascading renders that can hurt performance, and is not recommended. (https://react.dev/learn/you-might-not-need-an-effect).
+
+/Users/digitalaxis/Desktop/umurava Ai project/client/src/components/ProtectedRoute.tsx:23:5
+  21 |     }
+  22 |     
+> 23 |     setIsChecking(false);
+     |     ^^^^^^^^^^^^^ Avoid calling setState() directly within an effect
+  24 |   }, [pathname, router, token]);
+  25 |
+  26 |   if (isChecking) {  react-hooks/set-state-in-effect
+
+/Users/digitalaxis/Desktop/umurava Ai project/client/src/services/api.ts
+  27:26  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+✖ 18 problems (13 errors, 5 warnings)
+

@@ -1,0 +1,39 @@
+
+> client@0.1.0 lint
+> eslint
+
+
+/Users/digitalaxis/Desktop/umurava Ai project/client/refactorTheme.js
+  1:12  error  A `require()` style import is forbidden  @typescript-eslint/no-require-imports
+  2:14  error  A `require()` style import is forbidden  @typescript-eslint/no-require-imports
+
+/Users/digitalaxis/Desktop/umurava Ai project/client/src/app/candidate/profile/page.tsx
+   3:27  warning  'useEffect' is defined but never used               @typescript-eslint/no-unused-vars
+   8:25  warning  'Target' is defined but never used                  @typescript-eslint/no-unused-vars
+  39:22  warning  'setAiInsights' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+/Users/digitalaxis/Desktop/umurava Ai project/client/src/app/login/page.tsx
+  227:0  error  Parsing error: '}' expected
+
+/Users/digitalaxis/Desktop/umurava Ai project/client/src/app/page.tsx
+    8:14  warning  'Users' is defined but never used         @typescript-eslint/no-unused-vars
+    8:21  warning  'ChevronRight' is defined but never used  @typescript-eslint/no-unused-vars
+  214:51  warning  'i' is defined but never used             @typescript-eslint/no-unused-vars
+
+/Users/digitalaxis/Desktop/umurava Ai project/client/src/app/screening/[jobId]/page.tsx
+    7:17   warning  'Users' is defined but never used                                                                      @typescript-eslint/no-unused-vars
+    7:24   warning  'CheckCircle' is defined but never used                                                                @typescript-eslint/no-unused-vars
+   46:3    warning  Unused eslint-disable directive (no problems were reported from '@typescript-eslint/no-explicit-any')
+  447:63   error    Unexpected any. Specify a different type                                                               @typescript-eslint/no-explicit-any
+  519:85   warning  'idx' is defined but never used                                                                        @typescript-eslint/no-unused-vars
+  578:59   error    Unexpected any. Specify a different type                                                               @typescript-eslint/no-explicit-any
+  581:107  error    Unexpected any. Specify a different type                                                               @typescript-eslint/no-explicit-any
+
+/Users/digitalaxis/Desktop/umurava Ai project/client/src/components/candidate/ProfileForm.tsx
+  8:3   warning  'ExternalLink' is defined but never used  @typescript-eslint/no-unused-vars
+  8:17  warning  'Mail' is defined but never used          @typescript-eslint/no-unused-vars
+  8:23  warning  'Award' is defined but never used         @typescript-eslint/no-unused-vars
+
+✖ 19 problems (6 errors, 13 warnings)
+  0 errors and 1 warning potentially fixable with the `--fix` option.
+

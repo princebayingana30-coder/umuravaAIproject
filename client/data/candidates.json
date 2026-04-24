@@ -1,0 +1,256 @@
+[
+  {
+    "basicInfo": {
+      "name": "Amara Diallo",
+      "email": "amara.diallo@example.com",
+      "location": "Kigali, RW",
+      "title": "Senior Frontend Engineer",
+      "summary": "Frontend engineer specializing in React/Next.js, performance, and design systems."
+    },
+    "skills": ["React", "Next.js", "TypeScript", "Tailwind CSS", "Redux", "Playwright", "REST", "GraphQL"],
+    "experience": [
+      {
+        "company": "NimbusPay",
+        "role": "Senior Frontend Engineer",
+        "startDate": "2022-02-01",
+        "endDate": null,
+        "description": "Led frontend architecture, shipped core onboarding flows, and improved Core Web Vitals through code-splitting and image optimization.",
+        "technologies": ["React", "Next.js", "TypeScript", "Tailwind CSS", "GraphQL"],
+        "isCurrent": true
+      },
+      {
+        "company": "Atlas Commerce",
+        "role": "Frontend Engineer",
+        "startDate": "2019-01-01",
+        "endDate": "2022-01-15",
+        "description": "Built component library and analytics dashboard; collaborated with product and design; maintained test suite.",
+        "technologies": ["React", "TypeScript", "Jest", "Cypress"],
+        "isCurrent": false
+      }
+    ],
+    "education": [
+      { "institution": "University of Rwanda", "degree": "BSc", "fieldOfStudy": "Computer Science", "startYear": 2015, "endYear": 2018 }
+    ],
+    "certifications": ["AWS Cloud Practitioner", "Google UX Design (Foundations)"],
+    "projects": [
+      {
+        "name": "Design System Kit",
+        "description": "Built a reusable design system with accessibility standards and component documentation.",
+        "technologies": ["React", "Storybook", "Tailwind CSS"],
+        "role": "Tech Lead",
+        "link": "https://portfolio.example.com/design-system",
+        "dates": { "start": "2023-04-01" }
+      }
+    ],
+    "availability": { "status": "available", "type": "full_time", "startDate": "2026-05-01" },
+    "socialLinks": { "linkedin": "https://linkedin.com/in/amara-diallo", "github": "https://github.com/amara-diallo", "portfolio": "https://portfolio.example.com/amara" }
+  },
+  {
+    "basicInfo": {
+      "name": "Kwame Mensah",
+      "email": "kwame.mensah@example.com",
+      "location": "Accra, GH",
+      "title": "Full-Stack Engineer",
+      "summary": "Full-stack engineer with strong frontend focus and production experience in React and Node.js."
+    },
+    "skills": ["React", "TypeScript", "Node.js", "Express", "PostgreSQL", "REST", "Docker"],
+    "experience": [
+      {
+        "company": "MarketBridge",
+        "role": "Full-Stack Engineer",
+        "startDate": "2021-03-01",
+        "endDate": null,
+        "description": "Owned B2B portal, delivered RBAC, and improved page load times through SSR tuning and caching.",
+        "technologies": ["React", "TypeScript", "Node.js", "PostgreSQL"],
+        "isCurrent": true
+      }
+    ],
+    "education": [
+      { "institution": "KNUST", "degree": "BSc", "fieldOfStudy": "Computer Engineering", "startYear": 2016, "endYear": 2020 }
+    ],
+    "certifications": ["Meta Front-End Developer"],
+    "projects": [
+      { "name": "Hiring Tracker", "description": "Built a lightweight ATS dashboard with candidate tagging and notes.", "technologies": ["Next.js", "React", "SQLite"], "role": "Builder", "link": "https://github.com/kwame/hiring-tracker", "dates": { "start": "2024-01-01" } }
+    ],
+    "availability": { "status": "notice_period", "type": "full_time", "startDate": "2026-06-15" },
+    "socialLinks": { "linkedin": "https://linkedin.com/in/kwame-mensah", "github": "https://github.com/kwame" }
+  },
+  {
+    "basicInfo": {
+      "name": "Fatima Rukundo",
+      "email": "fatima.rukundo@example.com",
+      "location": "Kampala, UG",
+      "title": "Frontend Engineer",
+      "summary": "Frontend engineer focused on UI quality, accessibility, and component-driven development."
+    },
+    "skills": ["React", "TypeScript", "Tailwind CSS", "Accessibility", "REST", "Figma"],
+    "experience": [
+      { "company": "BrightHealth", "role": "Frontend Engineer", "startDate": "2022-07-01", "endDate": null, "description": "Built accessible UI flows, improved form validation UX, implemented design tokens.", "technologies": ["React", "TypeScript", "Tailwind CSS"], "isCurrent": true },
+      { "company": "Studio K", "role": "UI Developer", "startDate": "2020-02-01", "endDate": "2022-06-15", "description": "Delivered landing pages and prototypes; collaborated with designers and PMs.", "technologies": ["React", "CSS", "Figma"], "isCurrent": false }
+    ],
+    "education": [
+      { "institution": "Makerere University", "degree": "BSc", "fieldOfStudy": "Software Engineering", "startYear": 2016, "endYear": 2019 }
+    ],
+    "certifications": ["Deque University: Web Accessibility"],
+    "projects": [
+      { "name": "A11y Checklist", "description": "Created an accessibility checklist and component examples for internal teams.", "technologies": ["React", "MDX"], "role": "Author", "dates": { "start": "2023-09-01" } }
+    ],
+    "availability": { "status": "available", "type": "full_time", "startDate": "2026-05-20" },
+    "socialLinks": { "linkedin": "https://linkedin.com/in/fatima-rukundo", "github": "https://github.com/fatimar" }
+  },
+  {
+    "basicInfo": {
+      "name": "Chloe Mutesi",
+      "email": "chloe.mutesi@example.com",
+      "location": "Nairobi, KE",
+      "title": "Frontend Developer",
+      "summary": "Early-career frontend developer with React and TypeScript experience; building Next.js apps."
+    },
+    "skills": ["React", "TypeScript", "Next.js", "REST", "Jest"],
+    "experience": [
+      { "company": "KoraLabs", "role": "Frontend Developer", "startDate": "2023-01-01", "endDate": null, "description": "Implemented UI components and integrated REST endpoints; improved test coverage.", "technologies": ["React", "TypeScript", "Next.js"], "isCurrent": true }
+    ],
+    "education": [
+      { "institution": "USIU-Africa", "degree": "BSc", "fieldOfStudy": "Information Systems", "startYear": 2019, "endYear": 2022 }
+    ],
+    "certifications": [],
+    "projects": [
+      { "name": "Portfolio Builder", "description": "Built a portfolio generator with templates and export.", "technologies": ["Next.js", "Tailwind CSS"], "role": "Builder", "dates": { "start": "2024-06-01" } }
+    ],
+    "availability": { "status": "available", "type": "full_time", "startDate": "2026-05-10" },
+    "socialLinks": { "linkedin": "https://linkedin.com/in/chloe-mutesi", "github": "https://github.com/chloem" }
+  },
+  {
+    "basicInfo": {
+      "name": "Samuel Okello",
+      "email": "samuel.okello@example.com",
+      "location": "Dar es Salaam, TZ",
+      "title": "Frontend Engineer",
+      "summary": "Frontend engineer with a focus on performance, monitoring, and maintainable UI architecture."
+    },
+    "skills": ["React", "Next.js", "TypeScript", "Web Performance", "Sentry", "Tailwind CSS"],
+    "experience": [
+      { "company": "Relay Logistics", "role": "Frontend Engineer", "startDate": "2021-08-01", "endDate": null, "description": "Improved Web Vitals, implemented monitoring dashboards, led migration to Next.js App Router.", "technologies": ["React", "Next.js", "TypeScript"], "isCurrent": true }
+    ],
+    "education": [
+      { "institution": "University of Dar es Salaam", "degree": "BSc", "fieldOfStudy": "Computer Science", "startYear": 2015, "endYear": 2019 }
+    ],
+    "certifications": ["Google Analytics (GA4)"],
+    "projects": [
+      { "name": "Perf Budget Tool", "description": "Built a CI check that enforces performance budgets on PRs.", "technologies": ["Node.js", "Lighthouse"], "role": "Maintainer", "dates": { "start": "2022-11-01" } }
+    ],
+    "availability": { "status": "notice_period", "type": "full_time", "startDate": "2026-07-01" },
+    "socialLinks": { "linkedin": "https://linkedin.com/in/samuel-okello", "github": "https://github.com/sokello" }
+  },
+  {
+    "basicInfo": {
+      "name": "Leila Hassan",
+      "email": "leila.hassan@example.com",
+      "location": "Cairo, EG",
+      "title": "UI Engineer",
+      "summary": "UI engineer with strong design sense; builds polished interfaces with Tailwind and motion."
+    },
+    "skills": ["React", "TypeScript", "Tailwind CSS", "Framer Motion", "Design Systems", "Storybook"],
+    "experience": [
+      { "company": "Aurora Studio", "role": "UI Engineer", "startDate": "2020-09-01", "endDate": null, "description": "Delivered premium SaaS UI, created reusable component kits, and maintained Storybook.", "technologies": ["React", "TypeScript", "Tailwind CSS", "Framer Motion"], "isCurrent": true }
+    ],
+    "education": [
+      { "institution": "Cairo University", "degree": "BSc", "fieldOfStudy": "Computer Engineering", "startYear": 2016, "endYear": 2020 }
+    ],
+    "certifications": ["Figma for Product Designers (Advanced)"],
+    "projects": [
+      { "name": "Animated Onboarding", "description": "Built an onboarding flow with subtle motion and user guidance.", "technologies": ["React", "Framer Motion"], "role": "Lead", "dates": { "start": "2023-03-01" } }
+    ],
+    "availability": { "status": "available", "type": "contract", "startDate": "2026-05-05" },
+    "socialLinks": { "linkedin": "https://linkedin.com/in/leila-hassan", "portfolio": "https://portfolio.example.com/leila" }
+  },
+  {
+    "basicInfo": {
+      "name": "Nadia Tesfaye",
+      "email": "nadia.tesfaye@example.com",
+      "location": "Addis Ababa, ET",
+      "title": "Frontend Engineer",
+      "summary": "Frontend engineer with experience building B2C apps, state management, and testing."
+    },
+    "skills": ["React", "TypeScript", "Redux", "Next.js", "Testing Library", "REST"],
+    "experience": [
+      { "company": "ShopZen", "role": "Frontend Engineer", "startDate": "2021-05-01", "endDate": null, "description": "Built checkout flows, reduced bugs with testing discipline, optimized bundle sizes.", "technologies": ["React", "TypeScript", "Redux"], "isCurrent": true }
+    ],
+    "education": [
+      { "institution": "Addis Ababa University", "degree": "BSc", "fieldOfStudy": "Software Engineering", "startYear": 2016, "endYear": 2020 }
+    ],
+    "certifications": ["ISTQB Foundation"],
+    "projects": [
+      { "name": "E-commerce UI Kit", "description": "Reusable cart/checkout components with accessibility considerations.", "technologies": ["React", "TypeScript"], "role": "Maintainer", "dates": { "start": "2022-08-01" } }
+    ],
+    "availability": { "status": "notice_period", "type": "full_time", "startDate": "2026-06-30" },
+    "socialLinks": { "linkedin": "https://linkedin.com/in/nadia-tesfaye", "github": "https://github.com/nadiat" }
+  },
+  {
+    "basicInfo": {
+      "name": "Jean-Pierre Nkurunziza",
+      "email": "jp.nkurunziza@example.com",
+      "location": "Bujumbura, BI",
+      "title": "Frontend Engineer",
+      "summary": "Frontend engineer focused on data-heavy dashboards and charting."
+    },
+    "skills": ["React", "TypeScript", "Next.js", "D3.js", "ECharts", "REST"],
+    "experience": [
+      { "company": "InsightWorks", "role": "Frontend Engineer", "startDate": "2020-01-01", "endDate": null, "description": "Built analytics dashboards, implemented charts, and improved interaction performance.", "technologies": ["React", "TypeScript", "D3.js"], "isCurrent": true }
+    ],
+    "education": [
+      { "institution": "Université du Burundi", "degree": "BSc", "fieldOfStudy": "Computer Science", "startYear": 2015, "endYear": 2019 }
+    ],
+    "certifications": ["Google Data Analytics"],
+    "projects": [
+      { "name": "KPI Dashboard Template", "description": "Starter template for data dashboards with charts and filters.", "technologies": ["Next.js", "ECharts"], "role": "Builder", "dates": { "start": "2023-01-01" } }
+    ],
+    "availability": { "status": "available", "type": "full_time", "startDate": "2026-05-25" },
+    "socialLinks": { "linkedin": "https://linkedin.com/in/jp-nkurunziza", "github": "https://github.com/jpnk" }
+  },
+  {
+    "basicInfo": {
+      "name": "Zara Abebe",
+      "email": "zara.abebe@example.com",
+      "location": "Lagos, NG",
+      "title": "Frontend Engineer",
+      "summary": "Frontend engineer with product mindset; focuses on UX, experimentation, and quality."
+    },
+    "skills": ["React", "Next.js", "TypeScript", "Tailwind CSS", "Analytics", "Experimentation"],
+    "experience": [
+      { "company": "GrowthCart", "role": "Frontend Engineer", "startDate": "2021-10-01", "endDate": null, "description": "Built experiments, improved conversion through UI iteration, implemented analytics events.", "technologies": ["React", "Next.js", "TypeScript"], "isCurrent": true }
+    ],
+    "education": [
+      { "institution": "University of Lagos", "degree": "BSc", "fieldOfStudy": "Computer Science", "startYear": 2016, "endYear": 2020 }
+    ],
+    "certifications": ["Amplitude Analytics (Foundations)"],
+    "projects": [
+      { "name": "Experiment Toolkit", "description": "Internal toolkit for launching experiments safely.", "technologies": ["TypeScript", "React"], "role": "Lead", "dates": { "start": "2022-04-01" } }
+    ],
+    "availability": { "status": "available", "type": "full_time", "startDate": "2026-05-15" },
+    "socialLinks": { "linkedin": "https://linkedin.com/in/zara-abebe", "github": "https://github.com/zaraabebe" }
+  },
+  {
+    "basicInfo": {
+      "name": "Oumar Traoré",
+      "email": "oumar.traore@example.com",
+      "location": "Dakar, SN",
+      "title": "Senior Software Engineer",
+      "summary": "Senior engineer with frontend leadership; strong testing and architecture background."
+    },
+    "skills": ["React", "TypeScript", "Next.js", "Monorepos", "Testing", "CI/CD"],
+    "experience": [
+      { "company": "CloudLedger", "role": "Senior Software Engineer", "startDate": "2019-06-01", "endDate": null, "description": "Led UI modernization, defined code standards, scaled frontend delivery across teams.", "technologies": ["React", "TypeScript", "Next.js"], "isCurrent": true }
+    ],
+    "education": [
+      { "institution": "Université Cheikh Anta Diop", "degree": "MSc", "fieldOfStudy": "Computer Science", "startYear": 2017, "endYear": 2019 }
+    ],
+    "certifications": ["Scrum Master (PSM I)"],
+    "projects": [
+      { "name": "Frontend Platform", "description": "Created a shared platform for UI, linting, and release management.", "technologies": ["TypeScript", "Turborepo"], "role": "Owner", "dates": { "start": "2021-01-01" } }
+    ],
+    "availability": { "status": "notice_period", "type": "full_time", "startDate": "2026-07-15" },
+    "socialLinks": { "linkedin": "https://linkedin.com/in/oumar-traore" }
+  }
+]
+
