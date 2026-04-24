@@ -20,7 +20,7 @@
 └─ Reviews weekend activity
    ├─ 47 new resumes arrived (screened overnight by AI)
    ├─ Top 5 candidates scored 85%+
-   └─ 2 suspicious AI-generated resumes detected ⚠️
+   └─ 2 suspicious AI-generated resumes detected [WARNING]
 ```
 
 ---
@@ -65,12 +65,12 @@ Input: "3-5 years in backend development"
 
 ```
 Default (from IMPLEMENTATION_STRATEGY):
-✅ Skills: 35% (core job requirements)
-✅ Experience: 25% (years in role)
-✅ Projects: 20% (built relevant systems)
-✅ Education: 10% (degree/bootcamp)
-✅ Certifications: 5% (AWS, etc.)
-✅ Availability: 5% (start date match)
+[CHECK] Skills: 35% (core job requirements)
+[CHECK] Experience: 25% (years in role)
+[CHECK] Projects: 20% (built relevant systems)
+[CHECK] Education: 10% (degree/bootcamp)
+[CHECK] Certifications: 5% (AWS, etc.)
+[CHECK] Availability: 5% (start date match)
 
 Custom (optional override):
 - Click "Customize Weights"
@@ -144,34 +144,34 @@ As AI finishes each candidate:
 ```
 Candidates now appear in order:
 1️⃣ #1 - John Smith - 92%
-   ✅ All required skills present
-   ✅ 5 years backend experience (exceeds 3-5 requirement)
-   ✅ Built 3 relevant projects
-   ✅ BS Computer Science
-   ✅ Available immediately
+   [CHECK] All required skills present
+   [CHECK] 5 years backend experience (exceeds 3-5 requirement)
+   [CHECK] Built 3 relevant projects
+   [CHECK] BS Computer Science
+   [CHECK] Available immediately
    ❌ Authenticity: 8% AI (human-like ✓)
 
 2️⃣ #2 - Alice Johnson - 87%
-   ✅ All required skills
-   ✅ 4 years experience
-   ✅ 2 relevant projects
-   ⚠️ "Some gaps in system design knowledge"
-   ✅ AWS certified (bonus!)
+   [CHECK] All required skills
+   [CHECK] 4 years experience
+   [CHECK] 2 relevant projects
+   [WARNING] "Some gaps in system design knowledge"
+   [CHECK] AWS certified (bonus!)
    ❌ Authenticity: 22% AI (mostly human ✓)
 
 3️⃣ #3 - David Lee - 81%
-   ✅ Most skills present (missing GraphQL - nice-to-have)
-   ✅ 3.5 years experience
-   ⚠️ Only 1 relevant project
-   ✅ Self-taught, strong background
-   ❌ Authenticity: 45% AI (some generic text ⚠️)
+   [CHECK] Most skills present (missing GraphQL - nice-to-have)
+   [CHECK] 3.5 years experience
+   [WARNING] Only 1 relevant project
+   [CHECK] Self-taught, strong background
+   ❌ Authenticity: 45% AI (some generic text [WARNING])
 
 4️⃣ #4 - Sarah Chen - 62%
    ❌ Missing Node.js (critical skill)
    ❌ 2 years experience (below 3-5 range)
-   ⚠️ No relevant projects
-   ✅ Master's in CS
-   ⚠️ Not available for 1 month
+   [WARNING] No relevant projects
+   [CHECK] Master's in CS
+   [WARNING] Not available for 1 month
    ❌ Authenticity: 8% AI
 
 🚫 #5 - Mike Brown - 45%
@@ -195,18 +195,18 @@ Click on "John Smith" (rank #1)
 │  └─ "Strong shortlist candidate. All required skills with 
 │      proven project experience. Ready for technical interview."
 │
-├─ ✅ Top Strengths
+├─ [CHECK] Top Strengths
 │  ├─ "Mentions Node.js"
 │  ├─ "Mentions TypeScript"
 │  ├─ "Mentions MongoDB"
 │  ├─ "Mentions REST APIs"
 │  └─ "Mentions Redis"
 │
-├─ ⚠️ Identified Gaps
+├─ [WARNING] Identified Gaps
 │  ├─ "No explicit mention of system design"
 │  └─ "No Kubernetes experience mentioned"
 │
-├─ 🔍 AI Authenticity Signals
+├─ [SEARCH] AI Authenticity Signals
 │  ├─ "Specific metrics and numbers (genuine)"
 │  ├─ "Named companies and projects (verifiable)"
 │  ├─ "Natural language variation (not ChatGPT)"
@@ -281,7 +281,7 @@ Top Performers:
 2. Alice Johnson (Senior Backend) - 87%
 3. Robert Chen (Frontend Lead) - 88%
 
-⚠️ Alerts:
+[WARNING] Alerts:
 ├─ 3 AI-generated resumes detected (flagged)
 └─ 2 candidates passed technical screen (move to final round?)
 
@@ -316,12 +316,12 @@ Select a job: "Senior Backend Engineer"
 
 ```
 Task Checklist:
-✅ Created 1 new job (Senior Backend)
-✅ Reviewed 47 uploaded candidates
-✅ Made decisions: 5 shortlisted, 1 rejected for AI resume
-✅ Checked dashboard (on track)
-✅ Exported hiring report for HR
-✅ Scheduled interviews for top 5
+[CHECK] Created 1 new job (Senior Backend)
+[CHECK] Reviewed 47 uploaded candidates
+[CHECK] Made decisions: 5 shortlisted, 1 rejected for AI resume
+[CHECK] Checked dashboard (on track)
+[CHECK] Exported hiring report for HR
+[CHECK] Scheduled interviews for top 5
 
 Tomorrow Plan:
 └─ Technical interviews with 5 shortlisted candidates
@@ -378,7 +378,7 @@ Answer (from system):
 ├─ Made by: recruiter@umurava.com
 ├─ Timestamp: 2026-04-11 12:45 PM
 ├─ Notes: "Keep on file for future roles"
-└─ Proof: ✅ Fair, data-driven decision with audit trail
+└─ Proof: [CHECK] Fair, data-driven decision with audit trail
 ```
 
 ---
@@ -494,17 +494,17 @@ Wednesday AM:
 
 **With This:**
 ```
-✅ 30 seconds AI screening of 100 resumes
-✅ Consistent 6-factor scoring
-✅ Same criteria for all candidates
-✅ Full audit trail (automatic)
-✅ Bias-free evaluation
-✅ Permanent candidate database
-✅ Fast hiring (days to find top 5)
+[CHECK] 30 seconds AI screening of 100 resumes
+[CHECK] Consistent 6-factor scoring
+[CHECK] Same criteria for all candidates
+[CHECK] Full audit trail (automatic)
+[CHECK] Bias-free evaluation
+[CHECK] Permanent candidate database
+[CHECK] Fast hiring (days to find top 5)
 ```
 
 **Result**: Umurava recruiter goes from 30+ hours/position to 3-4 hours/position.
 **Impact**: 8x faster hiring, better candidates, lower cost.
 
-🚀 **TalentIQ AI makes recruiting smart.**
+[LAUNCH] **TalentIQ AI makes recruiting smart.**
 

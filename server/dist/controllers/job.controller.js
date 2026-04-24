@@ -3,8 +3,9 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.getJobById = exports.getJobs = exports.createJob = void 0;
+exports.deleteJob = exports.getJobById = exports.getJobs = exports.createJob = void 0;
 const Job_1 = __importDefault(require("../models/Job"));
+const ScreeningResult_1 = __importDefault(require("../models/ScreeningResult"));
 const createJob = async (req, res) => {
     try {
         const job = new Job_1.default(req.body);
@@ -38,3 +39,18 @@ const getJobById = async (req, res) => {
     }
 };
 exports.getJobById = getJobById;
+const deleteJob = async (req, res) => {
+    try {
+        const jobId = req.params.id;
+        const job = await Job_1.default.findByIdAndDelete(jobId);
+        if (!job)
+            return res.status(404).json({ error: 'Job not found' });
+        // Cascade delete screening results
+        await ScreeningResult_1.default.deleteMany({ jobId });
+        res.json({ message: 'Job and associated results deleted successfully' });
+    }
+    catch (error) {
+        res.status(500).json({ error: 'Failed to delete job' });
+    }
+};
+exports.deleteJob = deleteJob;

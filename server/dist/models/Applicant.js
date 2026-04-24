@@ -35,8 +35,86 @@ var __importStar = (this && this.__importStar) || (function () {
 Object.defineProperty(exports, "__esModule", { value: true });
 const mongoose_1 = __importStar(require("mongoose"));
 const ApplicantSchema = new mongoose_1.Schema({
-    name: { type: String, required: true },
+    firstName: { type: String, required: true },
+    lastName: { type: String, required: true },
     email: { type: String, required: true },
+    headline: { type: String, required: true },
+    bio: { type: String },
+    location: { type: String, required: true },
+    skills: [{
+            name: { type: String, required: true },
+            level: { type: String, enum: ['Beginner', 'Intermediate', 'Advanced', 'Expert'], required: true },
+            yearsOfExperience: { type: Number, required: true }
+        }],
+    languages: [{
+            name: { type: String, required: true },
+            proficiency: { type: String, enum: ['Basic', 'Conversational', 'Fluent', 'Native'], required: true }
+        }],
+    experience: [{
+            company: { type: String, required: true },
+            role: { type: String, required: true },
+            startDate: { type: String, required: true },
+            endDate: { type: String },
+            description: { type: String },
+            technologies: [{ type: String }],
+            isCurrent: { type: Boolean }
+        }],
+    education: [{
+            institution: { type: String, required: true },
+            degree: { type: String, required: true },
+            fieldOfStudy: { type: String },
+            startYear: { type: Number },
+            endYear: { type: Number }
+        }],
+    certifications: [{
+            name: { type: String, required: true },
+            issuer: { type: String, required: true },
+            issueDate: { type: String }
+        }],
+    projects: [{
+            name: { type: String, required: true },
+            description: { type: String },
+            technologies: [{ type: String }],
+            role: { type: String },
+            link: { type: String },
+            startDate: { type: String },
+            endDate: { type: String }
+        }],
+    availability: {
+        status: { type: String, enum: ['Available', 'Open to Opportunities', 'Not Available'], required: true, default: 'Available' },
+        type: { type: String, enum: ['Full-time', 'Part-time', 'Contract'], required: true, default: 'Full-time' },
+        startDate: { type: String }
+    },
+    socialLinks: {
+        linkedin: { type: String },
+        github: { type: String },
+        portfolio: { type: String }
+    },
+    // Document uploads with AI authenticity analysis
+    documents: [{
+            fileName: { type: String, required: true },
+            fileType: { type: String, required: true },
+            category: { type: String, enum: ['cv', 'cover_letter', 'certificate', 'portfolio', 'other'], default: 'other' },
+            extractedText: { type: String, default: '' },
+            uploadedAt: { type: Date, default: Date.now },
+            authenticity: {
+                score: { type: Number, default: 0 },
+                isAiGenerated: { type: Boolean, default: false },
+                flags: [{ type: String }],
+                suspiciousSegments: [{
+                        text: { type: String },
+                        reason: { type: String },
+                    }],
+                analyzedAt: { type: Date },
+            },
+        }],
+    documentAuthenticityStatus: {
+        type: String,
+        enum: ['clean', 'suspicious', 'flagged', 'pending'],
+        default: 'pending',
+    },
+    // Preserved fields
+    name: { type: String },
     resumeText: { type: String, required: true },
     resumeUrl: { type: String },
     source: { type: String },

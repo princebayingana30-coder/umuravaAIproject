@@ -22,17 +22,17 @@
 
 ### 👉 Our solution:
 ```
-✅ AI does the FIRST screening
+[CHECK] AI does the FIRST screening
    - Automated candidate ranking
    - Consistent evaluation criteria
    - Instant results (seconds, not hours)
 
-✅ Human still makes FINAL decision
+[CHECK] Human still makes FINAL decision
    - Recruiter reviews top candidates
    - AI provides reasoning and scores
    - Human judgment remains paramount
 
-✅ Real HR Product Thinking
+[CHECK] Real HR Product Thinking
    - Not a demo, a real tool
    - Umurava could actually use this
    - Solves actual business problem
@@ -127,27 +127,27 @@ Nice to Have:
 ```
 For each candidate, AI checks:
 
-✅ SKILLS MATCH
+[CHECK] SKILLS MATCH
    - Does resume list required skills?
    - How many required skills present?
    - Any bonus skills mentioned?
 
-✅ EXPERIENCE RELEVANCE
+[CHECK] EXPERIENCE RELEVANCE
    - Years in similar roles?
    - Relevant company types?
    - Progression visible?
 
-✅ PROJECT QUALITY
+[CHECK] PROJECT QUALITY
    - Built relevant projects?
    - Use required technologies?
    - Scale and complexity match?
 
-✅ EDUCATION & CERTIFICATIONS
+[CHECK] EDUCATION & CERTIFICATIONS
    - Required degree present?
    - Relevant certifications?
    - Self-taught? That's OK too.
 
-✅ AVAILABILITY MATCH
+[CHECK] AVAILABILITY MATCH
    - Notice period vs timeline?
    - Relocation willingness?
    - Start date alignment?
@@ -159,21 +159,21 @@ For each candidate, AI checks:
 CANDIDATE: John (Backend Developer Job)
 
 Job Requirements:
-- Node.js ✅ (5 years)
-- MongoDB ✅ (3 projects)
-- TypeScript ✅ (current job)
-- REST APIs ✅ (mentioned)
-- 2+ years experience ✅ (4 years)
-- Startup experience ✅ (worked at Startup XYZ)
+- Node.js [CHECK] (5 years)
+- MongoDB [CHECK] (3 projects)
+- TypeScript [CHECK] (current job)
+- REST APIs [CHECK] (mentioned)
+- 2+ years experience [CHECK] (4 years)
+- Startup experience [CHECK] (worked at Startup XYZ)
 
 EVALUATION:
-✅ Skills: ALL required skills present
-✅ Experience: 4 years (exceeds 2+ requirement)
-✅ Projects: Built 3 backend services with tech stack
-✅ Education: BS Computer Science
-✅ Availability: Available immediately
+[CHECK] Skills: ALL required skills present
+[CHECK] Experience: 4 years (exceeds 2+ requirement)
+[CHECK] Projects: Built 3 backend services with tech stack
+[CHECK] Education: BS Computer Science
+[CHECK] Availability: Available immediately
 
-CONFIDENCE: HIGH ✅
+CONFIDENCE: HIGH [CHECK]
 ```
 
 ---
@@ -184,30 +184,30 @@ CONFIDENCE: HIGH ✅
 
 ```
 🥇 #1 - John Smith → 92%
-   ✅ All required skills
-   ✅ 4 years experience
-   ✅ Built 3 relevant projects
-   ⚠️ No AWS (nice-to-have, not required)
+   [CHECK] All required skills
+   [CHECK] 4 years experience
+   [CHECK] Built 3 relevant projects
+   [WARNING] No AWS (nice-to-have, not required)
 
 🥈 #2 - Alice Johnson → 87%
-   ✅ All required skills
-   ✅ 3 years experience
-   ✅ 2 relevant projects
-   ⚠️ Recent grad, less experience
-   ✅ AWS certified (bonus!)
+   [CHECK] All required skills
+   [CHECK] 3 years experience
+   [CHECK] 2 relevant projects
+   [WARNING] Recent grad, less experience
+   [CHECK] AWS certified (bonus!)
 
 🥉 #3 - David Lee → 81%
-   ✅ Most required skills
-   ⚠️ Missing TypeScript
-   ✅ 2.5 years experience
-   ⚠️ Only 1 relevant project
-   ✅ Strong education
+   [CHECK] Most required skills
+   [WARNING] Missing TypeScript
+   [CHECK] 2.5 years experience
+   [WARNING] Only 1 relevant project
+   [CHECK] Strong education
 
 ❌ #4 - Sarah Chen → 62%
    ❌ Missing Node.js (critical)
    ❌ Only 1 year experience
-   ✅ Has MongoDB
-   ⚠️ No relevant projects
+   [CHECK] Has MongoDB
+   [WARNING] No relevant projects
 
 (Candidates below 60% not shown - likely poor fit)
 ```
@@ -246,19 +246,19 @@ Example for "Backend Developer" job:
 Need: Node.js, MongoDB, TypeScript, REST APIs, SQL
 
 Candidate A:
-- Has Node.js ✅ (+7%)
-- Has MongoDB ✅ (+7%)
-- Has TypeScript ✅ (+7%)
-- Has REST APIs ✅ (+7%)
-- Has SQL ✅ (+7%)
-- Bonus: AWS ✅ (+2%)
+- Has Node.js [CHECK] (+7%)
+- Has MongoDB [CHECK] (+7%)
+- Has TypeScript [CHECK] (+7%)
+- Has REST APIs [CHECK] (+7%)
+- Has SQL [CHECK] (+7%)
+- Bonus: AWS [CHECK] (+2%)
 = 37% / 35% → 35% (capped)
 
 Candidate B:
-- Has Node.js ✅ (+7%)
-- Has MongoDB ✅ (+7%)
+- Has Node.js [CHECK] (+7%)
+- Has MongoDB [CHECK] (+7%)
 - Missing TypeScript ❌ (0%)
-- Has REST APIs ✅ (+7%)
+- Has REST APIs [CHECK] (+7%)
 - Missing SQL ❌ (0%)
 = 21% / 35%
 ```
@@ -275,7 +275,7 @@ Example for "Backend Developer (2+ years)" job:
 
 Candidate A: 4 years backend
 - 4 / 2 = 2.0 (capped at 1.0) → 25%
-- Startup experience ✅ → +5%
+- Startup experience [CHECK] → +5%
 = 25% + 5% = 30% / 25% (capped at 25%)
 
 Candidate B: 1.5 years backend
@@ -298,10 +298,10 @@ Calculation:
 Example for Backend Developer job:
 
 Candidate A:
-- Project 1: Built REST API with Node.js ✅
-- Project 2: MongoDB database system ✅
-- Project 3: TypeScript microservice ✅
-- Project complexity: Enterprise scale ✅
+- Project 1: Built REST API with Node.js [CHECK]
+- Project 2: MongoDB database system [CHECK]
+- Project 3: TypeScript microservice [CHECK]
+- Project complexity: Enterprise scale [CHECK]
 = 10% + 10% = 20%
 
 Candidate B:
@@ -346,17 +346,17 @@ Calculation:
 Example for Backend Developer:
 
 Candidate A:
-- AWS Certified Solutions Architect ✅ (+1%)
-- Google Cloud Certified ✅ (+1%)
-- Node.js Certification ✅ (+1%)
+- AWS Certified Solutions Architect [CHECK] (+1%)
+- Google Cloud Certified [CHECK] (+1%)
+- Node.js Certification [CHECK] (+1%)
 = 3% / 5%
 
 Candidate B:
-- AWS Certified ✅ (+1%)
-- Azure Certified ✅ (+1%)
-- Docker Certified ✅ (+1%)
-- Kubernetes Certified ✅ (+1%)
-- HashiCorp Certified ✅ (+1%)
+- AWS Certified [CHECK] (+1%)
+- Azure Certified [CHECK] (+1%)
+- Docker Certified [CHECK] (+1%)
+- Kubernetes Certified [CHECK] (+1%)
+- HashiCorp Certified [CHECK] (+1%)
 = 5% / 5% (capped)
 ```
 
@@ -373,8 +373,8 @@ Calculation:
 Example:
 
 Candidate A:
-- Available immediately ✅ → 5%
-- Willing to relocate ✅ → +1% (if needed)
+- Available immediately [CHECK] → 5%
+- Willing to relocate [CHECK] → +1% (if needed)
 = 5% / 5%
 
 Candidate B:
@@ -391,22 +391,22 @@ Candidate B:
 EXAMPLE: Backend Developer Job
 
 Candidate John:
-Skills:        35/35 ✅
-Experience:    25/25 ✅
-Projects:      18/20 ⚠️
-Education:     10/10 ✅
-Certifications: 3/5  ⚠️
-Availability:  5/5  ✅
+Skills:        35/35 [CHECK]
+Experience:    25/25 [CHECK]
+Projects:      18/20 [WARNING]
+Education:     10/10 [CHECK]
+Certifications: 3/5  [WARNING]
+Availability:  5/5  [CHECK]
 
 TOTAL: (35+25+18+10+3+5) / 100 = 96/100 = 96%
 
 Candidate Alice:
-Skills:        28/35 ⚠️
-Experience:    20/25 ⚠️
-Projects:      15/20 ⚠️
-Education:     10/10 ✅
-Certifications: 5/5  ✅
-Availability:  4/5  ⚠️
+Skills:        28/35 [WARNING]
+Experience:    20/25 [WARNING]
+Projects:      15/20 [WARNING]
+Education:     10/10 [CHECK]
+Certifications: 5/5  [CHECK]
+Availability:  4/5  [WARNING]
 
 TOTAL: (28+20+15+10+5+4) / 100 = 82/100 = 82%
 
@@ -416,7 +416,7 @@ Experience:    15/25 ❌
 Projects:      10/20 ❌
 Education:     5/10  ❌
 Certifications: 1/5  ❌
-Availability:  5/5  ✅
+Availability:  5/5  [CHECK]
 
 TOTAL: (21+15+10+5+1+5) / 100 = 57/100 = 57% (BELOW THRESHOLD)
 ```
@@ -490,13 +490,13 @@ CANDIDATES RANKED:
 ├───────────────────────────────────────────┤
 │ ████████████████░ 92%                     │
 │                                           │
-│ ✅ STRENGTHS:                             │
+│ [CHECK] STRENGTHS:                             │
 │  • All required skills present            │
 │  • 4 years backend experience             │
 │  • Built 3 relevant projects              │
 │  • Bachelor's in CS                       │
 │                                           │
-│ ⚠️ GAPS:                                  │
+│ [WARNING] GAPS:                                  │
 │  • No AWS certification (nice-to-have)    │
 │                                           │
 │ 📝 REASONING:                             │
@@ -511,12 +511,12 @@ CANDIDATES RANKED:
 ├───────────────────────────────────────────┤
 │ ███████████████░ 87%                     │
 │                                           │
-│ ✅ STRENGTHS:                             │
+│ [CHECK] STRENGTHS:                             │
 │  • All required skills                    │
 │  • 3 years experience                     │
 │  • AWS certified (bonus!)                 │
 │                                           │
-│ ⚠️ GAPS:                                  │
+│ [WARNING] GAPS:                                  │
 │  • Only 2 relevant projects               │
 │  • Fewer years than ideal                 │
 │                                           │
@@ -532,12 +532,12 @@ CANDIDATES RANKED:
 ├───────────────────────────────────────────┤
 │ ██████████████░ 81%                      │
 │                                           │
-│ ✅ STRENGTHS:                             │
+│ [CHECK] STRENGTHS:                             │
 │  • 2.5 years experience                   │
 │  • Strong education background            │
 │  • Available immediately                  │
 │                                           │
-│ ⚠️ GAPS:                                  │
+│ [WARNING] GAPS:                                  │
 │  • Missing TypeScript                     │
 │  • Only 1 relevant project                │
 │                                           │
@@ -574,29 +574,29 @@ CANDIDATES RANKED:
 
 **Responsibilities:**
 ```
-✅ Build Job Input Form (PAGE 1)
+[CHECK] Build Job Input Form (PAGE 1)
    - Form validation
    - Skill checkboxes
    - Submit button
    - Loading state
 
-✅ Build Screening Results Page (PAGE 2)
+[CHECK] Build Screening Results Page (PAGE 2)
    - Ranked candidate cards
    - Progress bars
    - Strengths/Gaps sections
    - Action buttons
 
-✅ Build Full Profile View
+[CHECK] Build Full Profile View
    - Resume preview
    - Detailed information
    - Download resume
 
-✅ Build Navigation
+[CHECK] Build Navigation
    - Dashboard
    - Job listings
    - Results archive
 
-✅ Styling & UX
+[CHECK] Styling & UX
    - Dark theme
    - Responsive design
    - Smooth transitions
@@ -615,7 +615,7 @@ CANDIDATES RANKED:
 
 **Responsibilities:**
 ```
-✅ API Routes
+[CHECK] API Routes
 
    POST /api/jobs
    - Create new job
@@ -632,22 +632,22 @@ CANDIDATES RANKED:
    - Fetch previous results
    - Return with AI reasoning
 
-✅ Database Management
+[CHECK] Database Management
    - Job model (schema)
    - Screening results model
    - Candidate storage
 
-✅ Gemini API Integration
+[CHECK] Gemini API Integration
    - Send job + candidate data
    - Parse AI response
    - Extract scores & reasoning
 
-✅ Error Handling
+[CHECK] Error Handling
    - Validation errors
    - API errors
    - Database errors
 
-✅ Performance
+[CHECK] Performance
    - Optimize queries
    - Cache results
    - Handle concurrency
@@ -665,36 +665,36 @@ CANDIDATES RANKED:
 
 **Responsibilities:**
 ```
-✅ Write Gemini Prompt
+[CHECK] Write Gemini Prompt
    - Input structure
    - Output format
    - Scoring logic
    - Quality checks
 
-✅ Scoring System
+[CHECK] Scoring System
    - Define weights (35% skills, 25% exp, etc.)
    - Validation rules
    - Quality thresholds
 
-✅ Response Formatting
+[CHECK] Response Formatting
    - JSON structure
    - Score field
    - Reasoning field
    - Strengths/gaps
 
-✅ Testing & Validation
+[CHECK] Testing & Validation
    - Test with sample candidates
    - Verify scoring accuracy
    - Ensure consistent results
    - Check edge cases
 
-✅ Prompt Optimization
+[CHECK] Prompt Optimization
    - A/B test different phrasings
    - Improve accuracy
    - Reduce hallucinations
    - Enhance reasoning quality
 
-✅ Documentation
+[CHECK] Documentation
    - Document scoring logic
    - Create prompt guide
    - Track changes/iterations
@@ -707,36 +707,36 @@ CANDIDATES RANKED:
 
 ---
 
-## 🚀 6. WHAT MAKES US BETTER THAN OTHERS
+## [LAUNCH] 6. WHAT MAKES US BETTER THAN OTHERS
 
 ### 👉 We win by:
 
 ```
-✅ Using Schema Correctly
+[CHECK] Using Schema Correctly
    - We understand Umurava schema fully
    - Extract relevant fields properly
    - Don't make assumptions
    - Handle edge cases
 
-✅ Clear AI Reasoning
+[CHECK] Clear AI Reasoning
    - NOT just a magic black box
    - AI explains WHY it scored each candidate
    - Recruiter can see the logic
    - Can make informed decisions
 
-✅ Clean UI
+[CHECK] Clean UI
    - Professional looking
    - Easy to understand
    - Fast results
    - Mobile responsive
 
-✅ Real-World Product Thinking
+[CHECK] Real-World Product Thinking
    - Solves actual HR problem
    - Recruiters can actually USE this
    - Not a tech demo
    - Production ready mindset
 
-✅ Consistent Scoring
+[CHECK] Consistent Scoring
    - Same criteria for all candidates
    - No bias
    - Reproducible results
@@ -801,31 +801,31 @@ CANDIDATES RANKED:
 **This means:**
 
 ```
-✅ Professional Quality Code
+[CHECK] Professional Quality Code
    - Type-safe (TypeScript)
    - Error handling
    - Input validation
    - Security measures
 
-✅ Actual Business Logic
+[CHECK] Actual Business Logic
    - Solves real problem
    - Clear workflow
    - Reproducible results
    - Audit trail
 
-✅ Production Ready
+[CHECK] Production Ready
    - Scalable architecture
    - Good performance
    - Maintainable code
    - Documentation
 
-✅ User-Focused Design
+[CHECK] User-Focused Design
    - Easy to learn
    - Fast to use
    - Trustworthy results
    - Professional appearance
 
-✅ Testing & Validation
+[CHECK] Testing & Validation
    - Works with real data
    - Edge cases handled
    - Quality assured
@@ -836,7 +836,7 @@ CANDIDATES RANKED:
 
 ## 📋 STEP-BY-STEP IMPLEMENTATION CHECKLIST
 
-### ✅ COMPLETED (Already Done)
+### [CHECK] COMPLETED (Already Done)
 - [x] Project setup (Next.js + Express)
 - [x] Database models created
 - [x] Authentication system
@@ -892,4 +892,4 @@ Or go directly to any other step you want to start with.
 
 ---
 
-**Let me know when you're ready to continue! 🚀**
+**Let me know when you're ready to continue! [LAUNCH]**

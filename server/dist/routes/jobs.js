@@ -9,4 +9,5 @@ const router = express_1.default.Router();
 router.post('/', job_controller_1.createJob);
 router.get('/', job_controller_1.getJobs);
 router.get('/:id', job_controller_1.getJobById);
+router.delete('/:id', job_controller_1.deleteJob);
 exports.default = router;

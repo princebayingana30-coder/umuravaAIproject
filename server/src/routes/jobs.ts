@@ -1,10 +1,11 @@
 import express from 'express';
-import { createJob, getJobs, getJobById } from '../controllers/job.controller';
+import { createJob, getJobs, getJobById, deleteJob } from '../controllers/job.controller';
 
 const router = express.Router();
 
 router.post('/', createJob);
 router.get('/', getJobs);
 router.get('/:id', getJobById);
+router.delete('/:id', deleteJob);
 
 export default router;

@@ -5,14 +5,14 @@
 This project uses Google Gemini 1.5 Flash as the underlying LLM for AI-powered talent screening.
 
 ### Mandatory Requirements Met:
-- ✅ **Gemini API used as underlying LLM**: All AI operations use `@google/generative-ai` with Gemini 1.5 Flash
-- ✅ **Prompt engineering intentional and documented**: See below for detailed prompt structures
-- ✅ **AI outputs clean, structured, and recruiter-friendly**: JSON schema validation ensures consistent output
+- [CHECK] **Gemini API used as underlying LLM**: All AI operations use `@google/generative-ai` with Gemini 1.5 Flash
+- [CHECK] **Prompt engineering intentional and documented**: See below for detailed prompt structures
+- [CHECK] **AI outputs clean, structured, and recruiter-friendly**: JSON schema validation ensures consistent output
 
 ### Recommended AI Capabilities Implemented:
-- ✅ **Multi-candidate evaluation in single prompt**: Batch processing of up to multiple candidates
-- ✅ **Weighted scoring**: Skills (40%), Experience (35%), Education (10%), Context (15%)
-- ✅ **Natural-language explanations**: Human-readable strengths, gaps, and recommendations
+- [CHECK] **Multi-candidate evaluation in single prompt**: Batch processing of up to multiple candidates
+- [CHECK] **Weighted scoring**: Skills (40%), Experience (35%), Education (10%), Context (15%)
+- [CHECK] **Natural-language explanations**: Human-readable strengths, gaps, and recommendations
 
 ## Prompt Engineering Details
 
@@ -153,13 +153,13 @@ function mockScreenCandidates(job: JobInput, candidates: CandidateInput[]): Scre
 
 ## Technology Stack Compliance
 
-- ✅ **Language**: TypeScript
-- ✅ **Frontend**: Next.js (App Router)
-- ✅ **State Management**: Redux + Redux Toolkit
-- ✅ **Styling**: Tailwind CSS
-- ✅ **Backend**: Node.js + Express
-- ✅ **Database**: MongoDB + Mongoose
-- ✅ **AI / LLM**: Gemini API (@google/generative-ai)
+- [CHECK] **Language**: TypeScript
+- [CHECK] **Frontend**: Next.js (App Router)
+- [CHECK] **State Management**: Redux + Redux Toolkit
+- [CHECK] **Styling**: Tailwind CSS
+- [CHECK] **Backend**: Node.js + Express
+- [CHECK] **Database**: MongoDB + Mongoose
+- [CHECK] **AI / LLM**: Gemini API (@google/generative-ai)
 
 ## API Endpoints
 

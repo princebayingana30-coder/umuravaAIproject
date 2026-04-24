@@ -7,10 +7,15 @@ export interface IScreeningResult extends Document {
   score: number;
   strengths: string[];
   gaps: string[];
-  recommendation: string;
+  reasoning: string;
+  recommendation: 'Strong Hire' | 'Consider' | 'Reject';
   aiAuthenticityScore: number;
   aiFlags: string[];
   aiSuspiciousSegments: { text: string; reason: string }[];
+  aiScore: number;
+  skillMatch: number;
+  experienceMatch: number;
+  projectStrength: number;
   scoreBreakdown?: {
     skills: number;
     experience: number;
@@ -19,7 +24,13 @@ export interface IScreeningResult extends Document {
     certifications: number;
     availability: number;
     weighting: { skills: number; experience: number; projects: number; education: number; certifications: number; availability: number };
+    granularReasons?: { factor: string; impact: number; reason: string }[];
   };
+  jobFitConfidence: number; // 0-100
+  predictedGrowthPotential?: 'High' | 'Moderate' | 'Limited';
+  growthPotentialReasoning?: string;
+  biasDetectionFlags?: string[];
+  recruiterRecommendation?: string;
   decision?: 'shortlisted' | 'rejected' | 'hired' | 'in-interview' | null;
   decisionReason?: string;
   decisionMadeAt?: Date;
@@ -34,7 +45,12 @@ const ScreeningResultSchema: Schema = new Schema({
   score: { type: Number, required: true },
   strengths: [{ type: String }],
   gaps: [{ type: String }],
-  recommendation: { type: String },
+  reasoning: { type: String, default: '' },
+  recommendation: {
+    type: String,
+    enum: ['Strong Hire', 'Consider', 'Reject'],
+    default: 'Consider',
+  },
   aiAuthenticityScore: { type: Number },
   aiFlags: [{ type: String }],
   aiSuspiciousSegments: [
@@ -43,6 +59,10 @@ const ScreeningResultSchema: Schema = new Schema({
       reason: { type: String },
     },
   ],
+  aiScore: { type: Number },
+  skillMatch: { type: Number },
+  experienceMatch: { type: Number },
+  projectStrength: { type: Number },
   scoreBreakdown: {
     skills: { type: Number },
     experience: { type: Number },
@@ -58,7 +78,19 @@ const ScreeningResultSchema: Schema = new Schema({
       certifications: { type: Number },
       availability: { type: Number },
     },
+    granularReasons: [
+      {
+        factor: { type: String },
+        impact: { type: Number },
+        reason: { type: String },
+      },
+    ],
   },
+  jobFitConfidence: { type: Number, default: 0 },
+  predictedGrowthPotential: { type: String, enum: ['High', 'Moderate', 'Limited'] },
+  growthPotentialReasoning: { type: String },
+  biasDetectionFlags: [{ type: String }],
+  recruiterRecommendation: { type: String },
   decision: { type: String, enum: ['shortlisted', 'rejected', 'hired', 'in-interview'], default: null },
   decisionReason: { type: String },
   decisionMadeAt: { type: Date },

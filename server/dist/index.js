@@ -19,6 +19,11 @@ app.use((0, cors_1.default)({
     credentials: true,
 }));
 app.use(express_1.default.json());
+// Request logging
+app.use((req, res, next) => {
+    console.log(`${new Date().toISOString()} - ${req.method} ${req.url}`);
+    next();
+});
 // Routes
 app.use('/api/auth', auth_1.default);
 // Public mode (no login required)

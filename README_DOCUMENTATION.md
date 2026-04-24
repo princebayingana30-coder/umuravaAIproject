@@ -2,7 +2,7 @@
 
 Welcome to **TalentIQ AI** - A Gemini-powered talent screening platform.
 
-## 🚀 Quick Navigation
+## [LAUNCH] Quick Navigation
 
 ### 👤 New Users - Start Here
 1. **[QUICK_START.md](./QUICK_START.md)** ← Start here! (5 min read)
@@ -50,7 +50,7 @@ Welcome to **TalentIQ AI** - A Gemini-powered talent screening platform.
    - Authenticity detection logic
    - Result interpretation
 
-### ✅ Verification and Status
+### [CHECK] Verification and Status
 8. **[REQUIREMENTS_CHECKLIST.md](./REQUIREMENTS_CHECKLIST.md)** (5 min read)
    - All feature verification
    - What's implemented
@@ -135,7 +135,7 @@ Welcome to **TalentIQ AI** - A Gemini-powered talent screening platform.
 
 ---
 
-## 🚀 Quick Commands
+## [LAUNCH] Quick Commands
 
 ```bash
 # Start development
@@ -165,29 +165,29 @@ Password: talentiq123
 
 ---
 
-## ✨ Features at a Glance
+## [SPARKLE] Features at a Glance
 
-✅ Resume Parsing (PDF, XLSX, CSV, JSON, TXT, URL)  
-✅ Job Management (Create, edit, delete)  
-✅ AI Screening (Gemini powered)  
-✅ Candidate Ranking (Auto-scored)  
-✅ Email/Password Login  
-✅ Google OAuth (Ready to configure)  
-✅ Protected Routes  
-✅ Redux State Management  
-✅ Animated Landing Page  
-✅ Dark Theme Design  
-✅ Job-Themed Background  
-✅ Responsive Mobile Design  
-✅ MongoDB Persistence  
-✅ Comprehensive Error Handling  
+[CHECK] Resume Parsing (PDF, XLSX, CSV, JSON, TXT, URL)  
+[CHECK] Job Management (Create, edit, delete)  
+[CHECK] AI Screening (Gemini powered)  
+[CHECK] Candidate Ranking (Auto-scored)  
+[CHECK] Email/Password Login  
+[CHECK] Google OAuth (Ready to configure)  
+[CHECK] Protected Routes  
+[CHECK] Redux State Management  
+[CHECK] Animated Landing Page  
+[CHECK] Dark Theme Design  
+[CHECK] Job-Themed Background  
+[CHECK] Responsive Mobile Design  
+[CHECK] MongoDB Persistence  
+[CHECK] Comprehensive Error Handling  
 
 ---
 
 ## 📊 Project Status
 
 ```
-Status:           ✅ COMPLETE & PRODUCTION READY
+Status:           [CHECK] COMPLETE & PRODUCTION READY
 Last Updated:     April 11, 2026
 Frontend Server:  Running on port 3000
 Backend Server:   Running on port 5001

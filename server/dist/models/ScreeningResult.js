@@ -41,7 +41,12 @@ const ScreeningResultSchema = new mongoose_1.Schema({
     score: { type: Number, required: true },
     strengths: [{ type: String }],
     gaps: [{ type: String }],
-    recommendation: { type: String },
+    reasoning: { type: String, default: '' },
+    recommendation: {
+        type: String,
+        enum: ['Strong Hire', 'Consider', 'Reject'],
+        default: 'Consider',
+    },
     aiAuthenticityScore: { type: Number },
     aiFlags: [{ type: String }],
     aiSuspiciousSegments: [
@@ -65,7 +70,19 @@ const ScreeningResultSchema = new mongoose_1.Schema({
             certifications: { type: Number },
             availability: { type: Number },
         },
+        granularReasons: [
+            {
+                factor: { type: String },
+                impact: { type: Number },
+                reason: { type: String },
+            },
+        ],
     },
+    jobFitConfidence: { type: Number, default: 0 },
+    predictedGrowthPotential: { type: String, enum: ['High', 'Moderate', 'Limited'] },
+    growthPotentialReasoning: { type: String },
+    biasDetectionFlags: [{ type: String }],
+    recruiterRecommendation: { type: String },
     decision: { type: String, enum: ['shortlisted', 'rejected', 'hired', 'in-interview'], default: null },
     decisionReason: { type: String },
     decisionMadeAt: { type: Date },
