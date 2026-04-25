@@ -53,7 +53,8 @@ export default function LoginPage() {
 
   const handleDevGoogleLogin = async () => {
     try {
-      const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/auth/google-dev`, {
+      const apiBase = process.env.NEXT_PUBLIC_API_URL || '/api';
+      const response = await fetch(`${apiBase}/auth/google-dev`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
       });
@@ -79,8 +80,9 @@ export default function LoginPage() {
     try {
       const isAccessToken = !!credentialResponse.access_token;
       const tokenValue = credentialResponse.access_token || credentialResponse.credential;
+      const apiBase = process.env.NEXT_PUBLIC_API_URL || '/api';
 
-      const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/auth/google`, {
+      const response = await fetch(`${apiBase}/auth/google`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({

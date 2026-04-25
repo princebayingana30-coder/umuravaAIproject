@@ -1,4 +1,4 @@
-const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL || 'http://127.0.0.1:5001/api';
+const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL || '/api';
 
 function getToken() {
   if (typeof window === 'undefined') return null;
@@ -90,6 +90,17 @@ export const api = {
     },
     deleteResult: async (id: string) => {
       return request(`/screening/${id}`, { method: 'DELETE' });
+    },
+  },
+  gemini: {
+    ask: async (data: any) => {
+      return request('/gemini', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data),
+      });
     },
   },
 };
