@@ -5,6 +5,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.addCandidateWithDocuments = exports.getApplicantById = exports.getApplicants = exports.ingestApplicantFromLink = exports.ingestApplicants = exports.ingestSampleCandidates = exports.uploadAndParseResume = exports.createApplicant = void 0;
 const Applicant_1 = __importDefault(require("../models/Applicant"));
+const ScreeningResult_1 = __importDefault(require("../models/ScreeningResult"));
 const parser_service_1 = require("../services/parser.service");
 const ai_service_1 = require("../services/ai.service");
 const zod_1 = require("zod");
@@ -13,17 +14,19 @@ const path_1 = __importDefault(require("path"));
 const createApplicant = async (req, res) => {
     try {
         const data = req.body;
+        // Support legacy 'name' field if provided
         if (!data.firstName && data.name) {
             const parts = data.name.split(' ');
             data.firstName = parts[0] || 'Unknown';
             data.lastName = parts.slice(1).join(' ') || 'Candidate';
+            delete data.name;
         }
-        else if (!data.firstName) {
-            data.firstName = 'Unknown';
-            data.lastName = 'Candidate';
-        }
+        // Default values for mandatory fields
+        data.firstName = data.firstName || 'Unknown';
+        data.lastName = data.lastName || 'Candidate';
         data.headline = data.headline || 'Candidate';
         data.location = data.location || 'Unknown Location';
+        data.bio = data.bio || data.summary || ''; // Map legacy summary to bio
         data.skills = data.skills || [];
         data.experience = data.experience || [];
         data.education = data.education || [];
@@ -34,6 +37,7 @@ const createApplicant = async (req, res) => {
         res.status(201).json(applicant);
     }
     catch (error) {
+        console.error('Create Applicant Error:', error);
         res.status(500).json({ error: 'Failed to create applicant' });
     }
 };
@@ -50,11 +54,12 @@ const uploadAndParseResume = async (req, res) => {
             const resumeText = await (0, parser_service_1.parsePdfBufferToText)(req.file.buffer);
             // Use Gemini to extract structured data
             const aiData = await (0, parser_service_1.extractStructuredDataWithGemini)(resumeText);
-            const nameToUse = req.body.name || aiData.name || `${aiData.firstName || ''} ${aiData.lastName || ''}`.trim() || filename.split('.')[0] || 'Unknown';
+            const nameToUse = req.body.name || `${aiData.firstName || ''} ${aiData.lastName || ''}`.trim() || filename.split('.')[0] || 'Unknown';
             applicants = [
                 (0, parser_service_1.normalizeApplicantRecord)({
                     ...aiData,
-                    name: nameToUse,
+                    firstName: aiData.firstName || nameToUse.split(' ')[0],
+                    lastName: aiData.lastName || nameToUse.split(' ').slice(1).join(' ') || 'Candidate',
                     resumeText,
                     resumeUrl: 'file-upload',
                     source: 'pdf',
@@ -85,19 +90,20 @@ const uploadAndParseResume = async (req, res) => {
         const created = await Applicant_1.default.insertMany(applicants
             .filter((a) => a.resumeText && a.resumeText.length > 20)
             .map((a) => ({
-            firstName: a.firstName,
-            lastName: a.lastName,
-            name: a.name || `${a.firstName} ${a.lastName}`,
+            firstName: a.firstName || 'Unknown',
+            lastName: a.lastName || 'Candidate',
             email: a.email,
-            headline: a.headline,
-            bio: a.bio,
-            location: a.location,
-            skills: a.skills,
-            experience: a.experience,
-            education: a.education,
-            projects: a.projects,
-            availability: a.availability,
-            socialLinks: a.socialLinks,
+            headline: a.headline || 'Candidate',
+            bio: a.bio || '',
+            location: a.location || 'Unknown',
+            skills: a.skills || [],
+            languages: a.languages || [],
+            experience: a.experience || [],
+            education: a.education || [],
+            projects: a.projects || [],
+            certifications: a.certifications || [],
+            availability: a.availability || { status: 'Available', type: 'Full-time' },
+            socialLinks: a.socialLinks || {},
             resumeText: a.resumeText,
             resumeUrl: a.resumeUrl,
             source: a.source,
@@ -184,7 +190,8 @@ const ingestApplicantFromLink = async (req, res) => {
         const nameToUse = parsed.data.name || aiData.name || `${aiData.firstName || ''} ${aiData.lastName || ''}`.trim() || 'Unknown Candidate';
         const applicant = new Applicant_1.default((0, parser_service_1.normalizeApplicantRecord)({
             ...aiData,
-            name: nameToUse,
+            firstName: aiData.firstName || parsed.data.name?.split(' ')[0],
+            lastName: aiData.lastName || parsed.data.name?.split(' ').slice(1).join(' ') || 'Candidate',
             email: parsed.data.email || aiData.email || 'unknown@example.com',
             resumeText,
             resumeUrl: parsed.data.url,
@@ -261,7 +268,7 @@ const addCandidateWithDocuments = async (req, res) => {
             return res.status(400).json({ error: 'At least one document is required' });
         }
         // Parse basic candidate info from body
-        const { firstName, lastName, email, phone, headline, location, summary, documentCategories: categoriesJson, } = req.body;
+        const { firstName, lastName, email, phone, headline, location, summary, documentCategories: categoriesJson, skills, jobId, } = req.body;
         if (!firstName || !lastName || !email) {
             return res.status(400).json({ error: 'firstName, lastName, and email are required' });
         }
@@ -317,6 +324,15 @@ const addCandidateWithDocuments = async (req, res) => {
         }
         // Compute the overall document authenticity status
         const documentAuthenticityStatus = computeOverallAuthenticityStatus(processedDocs);
+        // Process Explicit Skills if provided
+        let explicitSkills = [];
+        if (skills) {
+            explicitSkills = skills.split(',').map((s) => ({
+                name: s.trim(),
+                level: 'Intermediate',
+                yearsOfExperience: 3
+            })).filter((s) => s.name);
+        }
         // Build the applicant record
         const fullName = `${firstName} ${lastName}`;
         const applicantData = {
@@ -327,7 +343,7 @@ const addCandidateWithDocuments = async (req, res) => {
             headline: headline || aiProfileData.headline || 'Candidate',
             bio: summary || aiProfileData.bio || '',
             location: location || aiProfileData.location || 'Unknown Location',
-            skills: aiProfileData.skills || [],
+            skills: explicitSkills.length > 0 ? explicitSkills : (aiProfileData.skills || []),
             experience: aiProfileData.experience || [],
             education: aiProfileData.education || [],
             projects: aiProfileData.projects || [],
@@ -342,7 +358,30 @@ const addCandidateWithDocuments = async (req, res) => {
         };
         const applicant = new Applicant_1.default(applicantData);
         await applicant.save();
-        console.log(`✅ Candidate ${fullName} added. Document status: ${documentAuthenticityStatus.toUpperCase()}`);
+        console.log(`[SUCCESS] Candidate ${fullName} added. Document status: ${documentAuthenticityStatus.toUpperCase()}`);
+        // If assigned to a job, create a screening result automatically
+        if (jobId) {
+            const isFake = documentAuthenticityStatus === 'flagged';
+            const newResult = new ScreeningResult_1.default({
+                jobId,
+                applicantId: applicant._id,
+                rank: 0,
+                score: isFake ? 0 : 50,
+                strengths: isFake ? [] : ['Awaiting full AI screening'],
+                gaps: isFake ? ['CAUTION: Fake/AI Documents'] : [],
+                recommendation: isFake ? 'Reject' : 'Consider',
+                reasoning: isFake
+                    ? 'CAUTION: Automated rejection and immediate restriction due to highly suspicious AI generated documents.'
+                    : 'Candidate added successfully to this job. Awaiting full AI screening profile generation.',
+                decision: isFake ? 'rejected' : null,
+                decisionReason: isFake ? 'CAUTION: AI Generated/Fake Documents detected upon upload' : undefined,
+                aiAuthenticityScore: isFake ? 99 : Math.max(0, ...processedDocs.map(d => d.authenticity.score)),
+                aiFlags: processedDocs.flatMap(d => d.authenticity.flags),
+                jobFitConfidence: 0,
+            });
+            await newResult.save();
+            console.log(`[SUCCESS] Associated applicant directly to Job: ${jobId} ${isFake ? 'with CAUTION flag' : ''}`);
+        }
         res.status(201).json(applicant);
     }
     catch (error) {

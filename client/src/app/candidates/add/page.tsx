@@ -1,7 +1,7 @@
 'use client';
 
-import React, { useState } from 'react';
-import { useRouter } from 'next/navigation';
+import React, { useState, Suspense } from 'react';
+import { useRouter, useSearchParams } from 'next/navigation';
 import { motion, AnimatePresence } from 'framer-motion';
 import {
   User, Mail, Briefcase, FileText, Upload,
@@ -89,7 +89,21 @@ function getOverallBadge(status: string) {
 
 /* ─── PAGE ─── */
 export default function AddCandidatePage() {
+  return (
+    <Suspense fallback={
+      <div className="min-h-screen bg-cyber-gradient flex items-center justify-center">
+        <Loader2 className="animate-spin text-blue-500" size={48} />
+      </div>
+    }>
+      <AddCandidateContent />
+    </Suspense>
+  );
+}
+
+function AddCandidateContent() {
   const router = useRouter();
+  const searchParams = useSearchParams();
+  const initialJobId = searchParams.get('jobId') || '';
 
   const [currentStep, setCurrentStep] = useState(1);
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -106,7 +120,7 @@ export default function AddCandidatePage() {
     headline: '',
     location: '',
     summary: '',
-    jobId: '',
+    jobId: initialJobId,
     skills: '',
   });
 

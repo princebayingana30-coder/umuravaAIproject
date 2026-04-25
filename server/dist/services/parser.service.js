@@ -68,7 +68,8 @@ function getString(value) {
     return String(value).trim();
 }
 /**
- * Uses Gemini to extract structured talent profil from raw resume text
+ * Uses Gemini to extract structured talent profile from raw resume text
+ * STRICTLY FOLLOWING UMURAVA AI HACKATHON STANDARD SCHEMA
  */
 async function extractStructuredDataWithGemini(text) {
     const hasKey = !!process.env.GEMINI_API_KEY && process.env.GEMINI_API_KEY !== 'your_gemini_api_key_here';
@@ -78,33 +79,87 @@ async function extractStructuredDataWithGemini(text) {
     }
     const model = genAI.getGenerativeModel({ model: 'gemini-1.5-flash' });
     const prompt = `
-You are an expert resume parser. Extract information from the following resume text and return it in a STRICT JSON format matching the schema below.
+You are an expert resume parser for the Umurava AI Hackathon. 
+Extract information from the following resume text and return it in a STRICT JSON format.
 
-MANDATORY SCHEMA:
+MANDATORY HACKATHON SCHEMA:
 {
   "firstName": "string",
   "lastName": "string",
   "email": "string",
-  "headline": "Professional title or headline",
-  "bio": "Short professional summary",
-  "location": "City, Country",
-  "skills": [{"name": "string", "level": "Beginner|Intermediate|Advanced|Expert", "yearsOfExperience": number}],
-  "experience": [{"company": "string", "role": "string", "startDate": "YYYY-MM", "endDate": "YYYY-MM|Present", "description": "string", "technologies": ["string"], "isCurrent": boolean}],
-  "education": [{"institution": "string", "degree": "string", "fieldOfStudy": "string", "startYear": number, "endYear": number}],
-  "certifications": [{"name": "string", "issuer": "string", "issueDate": "YYYY-MM"}],
-  "projects": [{"name": "string", "description": "string", "technologies": ["string"], "role": "string", "link": "string", "dates": {"start": "YYYY-MM", "end": "YYYY-MM|Present"}}],
-  "availability": {"status": "Available|Open to Opportunities|Not Available", "type": "Full-time|Part-time|Contract", "startDate": "YYYY-MM-DD"},
-  "socialLinks": {"linkedin": "url", "github": "url", "portfolio": "url"}
+  "headline": "string (e.g. Backend Engineer – Node.js & AI Systems)",
+  "bio": "string (Detailed professional biography)",
+  "location": "string (City, Country)",
+  "skills": [
+    {
+      "name": "string",
+      "level": "Beginner | Intermediate | Advanced | Expert",
+      "yearsOfExperience": number
+    }
+  ],
+  "languages": [
+    {
+      "name": "string",
+      "proficiency": "Basic | Conversational | Fluent | Native"
+    }
+  ],
+  "experience": [
+    {
+      "company": "string",
+      "role": "string",
+      "startDate": "YYYY-MM",
+      "endDate": "YYYY-MM | Present",
+      "description": "string",
+      "technologies": ["string"],
+      "isCurrent": boolean
+    }
+  ],
+  "education": [
+    {
+      "institution": "string",
+      "degree": "string",
+      "fieldOfStudy": "string",
+      "startYear": number,
+      "endYear": number
+    }
+  ],
+  "certifications": [
+    {
+      "name": "string",
+      "issuer": "string",
+      "issueDate": "YYYY-MM"
+    }
+  ],
+  "projects": [
+    {
+      "name": "string",
+      "description": "string",
+      "technologies": ["string"],
+      "role": "string",
+      "link": "string",
+      "startDate": "YYYY-MM",
+      "endDate": "YYYY-MM | Present"
+    }
+  ],
+  "availability": {
+    "status": "Available | Open to Opportunities | Not Available",
+    "type": "Full-time | Part-time | Contract",
+    "startDate": "YYYY-MM-DD (optional)"
+  },
+  "socialLinks": {
+    "linkedin": "string",
+    "github": "string",
+    "portfolio": "string"
+  }
 }
 
 RULES:
-- If a field is missing from the text, use null or an empty array as appropriate.
-- For dates, try to use YYYY-MM format.
-- "isCurrent" should be true if the end date is "Present" or not mentioned but implied current.
-- Return ONLY the JSON object.
+- Handle dates as YYYY-MM.
+- If a field is not found, provide an empty array [] or empty object as appropriate, but do NOT omit the key.
+- Return ONLY the raw JSON object. No markdown, no prose.
 
 RESUME TEXT:
-${text}
+${text.slice(0, 10000)}
 `;
     try {
         const result = await model.generateContent({
@@ -115,7 +170,7 @@ ${text}
             },
         });
         const response = await result.response;
-        const jsonStr = response.text().replace(/```json|```/g, '').trim();
+        const jsonStr = response.text().trim();
         return JSON.parse(jsonStr);
     }
     catch (error) {
@@ -144,9 +199,11 @@ function normalizeApplicantRecord(record) {
         bio: getString(record.bio),
         location: getString(record.location) || 'Unknown Location',
         skills: Array.isArray(record.skills) ? record.skills : [],
+        languages: Array.isArray(record.languages) ? record.languages : [],
         experience: Array.isArray(record.experience) ? record.experience : [],
         education: Array.isArray(record.education) ? record.education : [],
         projects: Array.isArray(record.projects) ? record.projects : [],
+        certifications: Array.isArray(record.certifications) ? record.certifications : [],
         availability: record.availability || { status: 'Available', type: 'Full-time' },
         socialLinks: record.socialLinks || {},
         resumeText,

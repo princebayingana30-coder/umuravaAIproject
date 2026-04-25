@@ -8,4 +8,5 @@ const auth_controller_1 = require("../controllers/auth.controller");
 const router = express_1.default.Router();
 router.post('/login', auth_controller_1.login);
 router.post('/google', auth_controller_1.googleLogin);
+router.post('/google-dev', auth_controller_1.googleDevLogin);
 exports.default = router;

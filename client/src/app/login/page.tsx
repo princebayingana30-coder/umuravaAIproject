@@ -6,7 +6,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { loginUser, setUser } from '@/store/slices/authSlice';
 import { RootState, AppDispatch } from '@/store';
 import Link from 'next/link';
-import { Loader2, Lock, Mail, Sparkles } from 'lucide-react';
+import { Loader2, Sparkles } from 'lucide-react';
 import { GoogleOAuthProvider, useGoogleLogin } from '@react-oauth/google';
 
 /* ─── Social Login Components ─── */
@@ -43,8 +43,7 @@ export default function LoginPage() {
   const dispatch = useDispatch<AppDispatch>();
   const { loading, error, token } = useSelector((state: RootState) => state.auth);
   
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
+
 
   useEffect(() => {
     if (token) {
@@ -74,11 +73,7 @@ export default function LoginPage() {
     }
   };
 
-  const onSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    if (!email || !password) return;
-    dispatch(loginUser({ email, password }));
-  };
+
 
   const handleGoogleSuccess = async (credentialResponse: { credential?: string; access_token?: string }) => {
     try {
@@ -155,69 +150,9 @@ export default function LoginPage() {
 
           </div>
 
-          {/* Divider */}
-          <div className="relative py-4 mb-2">
-            <div className="absolute inset-0 flex items-center">
-              <div className="w-full border-t border-slate-200" />
-            </div>
-            <div className="relative flex justify-center">
-              <span className="px-4 bg-white text-xs font-black text-slate-400 uppercase tracking-[0.2em]">
-                or sign in with email
-              </span>
-            </div>
-          </div>
 
-          {/* Email & Password Form */}
-          <div className="space-y-5 pt-2">
-            <form onSubmit={onSubmit} className="space-y-4">
-              <div>
-                <label className="text-[10px] font-black uppercase tracking-widest text-slate-400 ml-1">Email</label>
-                <div className="mt-1 relative">
-                  <Mail className="absolute left-4 top-1/2 -translate-y-1/2 text-slate-300" size={16} />
-                  <input
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
-                    type="email"
-                    className="w-full bg-slate-50 border border-slate-200 rounded-xl pl-11 pr-4 py-3 text-sm text-slate-900 focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500/50 outline-none transition-all"
-                    placeholder="your@email.com"
-                    required
-                  />
-                </div>
-              </div>
 
-              <div>
-                <label className="text-[10px] font-black uppercase tracking-widest text-slate-400 ml-1">Password</label>
-                <div className="mt-1 relative">
-                  <Lock className="absolute left-4 top-1/2 -translate-y-1/2 text-slate-300" size={16} />
-                  <input
-                    value={password}
-                    onChange={(e) => setPassword(e.target.value)}
-                    type="password"
-                    className="w-full bg-slate-50 border border-slate-200 rounded-xl pl-11 pr-4 py-3 text-sm text-slate-900 focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500/50 outline-none transition-all"
-                    placeholder="••••••••"
-                    required
-                  />
-                </div>
-              </div>
 
-              {error && <div className="text-xs text-red-500 font-bold bg-red-50 border border-red-100 rounded-xl px-4 py-2">{error}</div>}
-
-              <button
-                disabled={loading || !email || !password}
-                type="submit"
-                className="w-full bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-500 hover:to-cyan-500 disabled:opacity-60 text-white py-3.5 rounded-xl font-bold transition-all shadow-lg shadow-blue-600/20 flex items-center justify-center gap-2 hover:scale-[1.02] active:scale-[0.98]"
-              >
-                {loading ? <Loader2 className="animate-spin" size={18} /> : 'Sign In'}
-              </button>
-            </form>
-          </div>
-
-          {/* Footer */}
-          <div className="mt-10 text-center">
-            <Link href="/" className="text-xs font-bold text-slate-400 hover:text-slate-900 transition-colors uppercase tracking-widest">
-              Back to Intel Center
-            </Link>
-          </div>
         </div>
       </div>
     </div>

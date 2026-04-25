@@ -1,4 +1,4 @@
-const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5001/api';
+const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL || 'http://127.0.0.1:5001/api';
 
 function getToken() {
   if (typeof window === 'undefined') return null;
@@ -43,28 +43,16 @@ export const api = {
   },
   applicants: {
     upload: async (formData: FormData) => {
-      const token = getToken();
-      const headers: Record<string, string> = {};
-      if (token) headers.Authorization = `Bearer ${token}`;
-
-      const res = await fetch(`${API_BASE_URL}/applicants/upload`, {
+      return request('/applicants/upload', {
         method: 'POST',
-        headers,
         body: formData,
       });
-      return res.json();
     },
     addCandidate: async (formData: FormData) => {
-      const token = getToken();
-      const headers: Record<string, string> = {};
-      if (token) headers.Authorization = `Bearer ${token}`;
-
-      const res = await fetch(`${API_BASE_URL}/applicants/add-candidate`, {
+      return request('/applicants/add-candidate', {
         method: 'POST',
-        headers,
         body: formData,
       });
-      return res.json();
     },
     ingestSample: async () => {
       return request('/applicants/ingest/sample', { method: 'POST' });

@@ -116,10 +116,6 @@ export default function Dashboard() {
     e.preventDefault();
     e.stopPropagation();
     
-    if (!window.confirm('Are you sure you want to delete this job and all its screening results? This action cannot be undone.')) {
-      return;
-    }
-
     try {
       await api.jobs.delete(jobId);
       loadAnalytics(); // Refresh
@@ -169,9 +165,9 @@ export default function Dashboard() {
         <div>
           <div className="relative inline-flex flex-col gap-4">
             <motion.h1
-              className="text-4xl md:text-5xl font-black mb-2 bg-gradient-to-r from-white via-slate-200 to-slate-400 bg-clip-text text-transparent"
+              className="text-4xl md:text-5xl font-black mb-2 text-slate-900"
             >
-              Recruiter <span className="text-blue-500">Intelligence</span>
+              Recruiter <span className="text-blue-600">Intelligence</span>
             </motion.h1>
             <motion.span
               initial={{ width: 0 }}
@@ -238,18 +234,18 @@ export default function Dashboard() {
               <div className="space-y-4">
                 {analytics?.jobs.map((job) => (
                   <Link key={job.jobId} href={`/screening/${job.jobId}`}>
-                    <div className="group relative bg-slate-700/40 hover:bg-slate-700/60 p-6 rounded-3xl border border-slate-600/50 hover:border-blue-500/40 transition-all">
+                    <div className="group relative bg-white/60 hover:bg-white/90 p-6 rounded-3xl border border-slate-200 hover:border-blue-500/40 transition-all shadow-sm">
                       <div className="flex flex-col md:flex-row md:items-center justify-between gap-6">
                         <div className="flex items-center gap-5">
-                          <div className="w-14 h-14 bg-gradient-to-br from-blue-600/20 to-purple-600/20 rounded-2xl flex items-center justify-center border border-blue-500/30 group-hover:border-blue-500/50 text-blue-400 text-xl font-black">
+                          <div className="w-14 h-14 bg-gradient-to-br from-blue-600 to-indigo-600 rounded-2xl flex items-center justify-center border border-blue-400/30 group-hover:border-blue-400/60 text-slate-900 text-2xl font-black shadow-[0_0_20px_rgba(59,130,246,0.2)]">
                             {job.title[0]}
                           </div>
                           <div>
-                            <h3 className="text-xl font-bold text-white group-hover:text-blue-300 transition-colors uppercase tracking-tight">{job.title}</h3>
+                            <h3 className="text-xl font-black text-slate-900 group-hover:text-blue-700 transition-colors uppercase tracking-tight">{job.title}</h3>
                             <div className="flex items-center gap-4 mt-1">
-                              <span className="text-slate-400 text-sm font-medium">{job.totalCandidates} Candidates Screened</span>
-                              <span className="w-1 h-1 bg-slate-200 rounded-full" />
-                              <span className="text-emerald-400/80 text-sm font-bold">{job.decisions.shortlisted} Shortlisted</span>
+                               <span className="text-slate-600 text-sm font-bold opacity-90">{job.totalCandidates} Candidates Screened</span>
+                               <span className="w-1 h-1 bg-slate-400 rounded-full" />
+                               <span className="text-emerald-600 text-sm font-black">{job.decisions.shortlisted} Shortlisted</span>
                             </div>
                           </div>
                         </div>
@@ -283,7 +279,7 @@ export default function Dashboard() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             <motion.div className="bg-slate-800/40 border border-slate-700/50 rounded-[2.5rem] p-8 backdrop-blur-sm">
-              <h3 className="text-xl font-bold text-white mb-6 flex items-center gap-2">
+              <h3 className="text-xl font-black text-black mb-6 flex items-center gap-2">
                 <Sparkles className="text-emerald-400 w-5 h-5" />
                 Fairness Audit
               </h3>
@@ -310,7 +306,7 @@ export default function Dashboard() {
 
             <motion.div className="bg-slate-800/40 border border-slate-700/50 rounded-[2.5rem] p-8 relative overflow-hidden backdrop-blur-sm">
               <div className="absolute top-0 right-0 w-32 h-32 bg-blue-600/10 blur-3xl rounded-full" />
-              <h3 className="text-xl font-bold text-white mb-6 flex items-center gap-2">
+              <h3 className="text-xl font-black text-black mb-6 flex items-center gap-2">
                 <TrendingUp className="text-blue-400 w-5 h-5" />
                 Talent Marketplace
               </h3>
@@ -339,7 +335,7 @@ export default function Dashboard() {
           >
             <div className="flex items-center gap-3 mb-8">
               <Zap size={24} className="text-blue-400" />
-              <h2 className="text-2xl font-black text-white">Top Performers</h2>
+              <h2 className="text-2xl font-black text-black">Top Performers</h2>
             </div>
             
             {analyticsLoading ? (
@@ -356,15 +352,15 @@ export default function Dashboard() {
                     initial={{ opacity: 0, x: 10 }}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ delay: idx * 0.1 }}
-                    className="p-5 bg-slate-700/40 border border-slate-600/60 rounded-2xl hover:border-blue-500/50 transition-all group"
+                    className="p-5 bg-white/70 border border-slate-200 rounded-2xl hover:border-blue-400/60 hover:bg-white/90 transition-all group backdrop-blur-xl shadow-md"
                   >
                     <div className="flex items-center justify-between mb-3">
-                      <h4 className="font-bold text-white group-hover:text-blue-400 transition-colors">{performer.name}</h4>
-                      <span className="text-xl font-black text-blue-500">{performer.score}%</span>
+                      <h4 className="text-lg font-black text-blue-950 group-hover:text-blue-700 transition-colors uppercase tracking-tight">{performer.name}</h4>
+                      <span className="text-2xl font-black text-blue-700">{performer.score}%</span>
                     </div>
                     <div className="flex items-center justify-between text-xs">
-                      <span className="text-slate-400 font-medium uppercase tracking-tighter truncate max-w-[150px]">{performer.jobTitle}</span>
-                      <span className="text-emerald-400 font-bold bg-emerald-500/10 px-2 py-0.5 rounded">FIT: {performer.fitConfidence}%</span>
+                      <span className="text-slate-400 font-black uppercase tracking-tighter truncate max-w-[150px] opacity-70">{performer.jobTitle}</span>
+                      <span className="text-emerald-400 font-black bg-emerald-500/20 px-3 py-1 rounded-full border border-emerald-500/20 shadow-[0_0_10px_rgba(16,185,129,0.1)]">FIT: {performer.fitConfidence}%</span>
                     </div>
                   </motion.div>
                 ))}

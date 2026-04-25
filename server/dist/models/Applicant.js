@@ -37,7 +37,7 @@ const mongoose_1 = __importStar(require("mongoose"));
 const ApplicantSchema = new mongoose_1.Schema({
     firstName: { type: String, required: true },
     lastName: { type: String, required: true },
-    email: { type: String, required: true },
+    email: { type: String, required: true, unique: true },
     headline: { type: String, required: true },
     bio: { type: String },
     location: { type: String, required: true },
@@ -55,16 +55,16 @@ const ApplicantSchema = new mongoose_1.Schema({
             role: { type: String, required: true },
             startDate: { type: String, required: true },
             endDate: { type: String },
-            description: { type: String },
+            description: { type: String, required: true },
             technologies: [{ type: String }],
-            isCurrent: { type: Boolean }
+            isCurrent: { type: Boolean, default: false }
         }],
     education: [{
             institution: { type: String, required: true },
             degree: { type: String, required: true },
-            fieldOfStudy: { type: String },
-            startYear: { type: Number },
-            endYear: { type: Number }
+            fieldOfStudy: { type: String, required: true },
+            startYear: { type: Number, required: true },
+            endYear: { type: Number, required: true }
         }],
     certifications: [{
             name: { type: String, required: true },
@@ -73,11 +73,11 @@ const ApplicantSchema = new mongoose_1.Schema({
         }],
     projects: [{
             name: { type: String, required: true },
-            description: { type: String },
+            description: { type: String, required: true },
             technologies: [{ type: String }],
-            role: { type: String },
+            role: { type: String, required: true },
             link: { type: String },
-            startDate: { type: String },
+            startDate: { type: String, required: true },
             endDate: { type: String }
         }],
     availability: {
@@ -94,7 +94,7 @@ const ApplicantSchema = new mongoose_1.Schema({
     documents: [{
             fileName: { type: String, required: true },
             fileType: { type: String, required: true },
-            category: { type: String, enum: ['cv', 'cover_letter', 'certificate', 'portfolio', 'other'], default: 'other' },
+            category: { type: String, enum: ['cv', 'cover_letter', 'application_letter', 'certificate', 'diploma_degree', 'id_passport', 'portfolio', 'other'], default: 'other' },
             extractedText: { type: String, default: '' },
             uploadedAt: { type: Date, default: Date.now },
             authenticity: {

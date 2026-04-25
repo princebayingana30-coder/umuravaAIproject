@@ -47,8 +47,8 @@ const Navbar = () => {
             <Briefcase size={18} className="group-hover:text-blue-400 transition-colors" />
             Post Job
           </Link>
-          <Link href="/candidates/add" className="text-slate-400 hover:text-white transition-colors flex items-center gap-2 text-sm font-medium group">
-            <UserPlus size={18} className="group-hover:text-emerald-400 transition-colors" />
+          <Link href="/candidates/add" className="bg-blue-600/10 border border-blue-500/30 text-blue-400 hover:bg-blue-600/20 px-4 py-2 rounded-xl transition-all flex items-center gap-2 text-sm font-bold group shadow-sm">
+            <UserPlus size={18} className="group-hover:scale-110 transition-transform" />
             Add Candidate
           </Link>
         </div>

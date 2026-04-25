@@ -55,6 +55,10 @@ const ScreeningResultSchema = new mongoose_1.Schema({
             reason: { type: String },
         },
     ],
+    aiScore: { type: Number },
+    skillMatch: { type: Number },
+    experienceMatch: { type: Number },
+    projectStrength: { type: Number },
     scoreBreakdown: {
         skills: { type: Number },
         experience: { type: Number },

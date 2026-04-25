@@ -45,6 +45,10 @@ const runScreening = async (req, res) => {
                 aiAuthenticityScore: r.ai_authenticity_score,
                 aiFlags: r.ai_flags,
                 aiSuspiciousSegments: r.ai_suspicious_segments,
+                aiScore: r.aiScore,
+                skillMatch: r.skillMatch,
+                experienceMatch: r.experienceMatch,
+                projectStrength: r.projectStrength,
                 scoreBreakdown: {
                     ...r.score_breakdown,
                     granularReasons: r.score_breakdown?.granular_reasons?.map((gr) => ({

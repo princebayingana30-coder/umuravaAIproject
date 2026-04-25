@@ -16,6 +16,10 @@ const CandidateResultSchema = zod_1.z.object({
     applicantId: zod_1.z.string(),
     name: zod_1.z.string(),
     score: zod_1.z.number().min(0).max(100),
+    aiScore: zod_1.z.number().min(0).max(100),
+    skillMatch: zod_1.z.number().min(0).max(100),
+    experienceMatch: zod_1.z.number().min(0).max(100),
+    projectStrength: zod_1.z.number().min(0).max(100),
     strengths: zod_1.z.array(zod_1.z.string()).default([]),
     gaps: zod_1.z.array(zod_1.z.string()).default([]),
     reasoning: zod_1.z.string().default(''),
@@ -219,6 +223,10 @@ function mockBatch(job, candidates) {
             applicantId: c.applicantId,
             name: c.name,
             score,
+            aiScore: score,
+            skillMatch: skills,
+            experienceMatch: experience,
+            projectStrength: projects,
             strengths: strengths.slice(0, 5),
             gaps: gaps.slice(0, 5),
             reasoning,
@@ -270,6 +278,10 @@ IMPORTANT RULES:
 - Return STRICT JSON only (no markdown, no extra keys, no prose).
 - Output MUST be a JSON array of objects in the exact schema below.
 - Produce ranks with 1 = best candidate.
+- aiScore MUST be equal to score.
+- skillMatch MUST be equal to skills match score.
+- experienceMatch MUST be equal to experience match score.
+- projectStrength MUST be equal to projects match score.
 - recommendation MUST be exactly one of: "Strong Hire", "Consider", or "Reject"
 - reasoning MUST be a 2-3 sentence human-readable explanation of the ranking decision.
 - why_not_selected MUST be a clear explanation for anyone NOT ranked #1.
@@ -317,6 +329,10 @@ OUTPUT JSON ARRAY SCHEMA (exact keys, no extras):
     "applicantId": "string",
     "name": "string",
     "score": 87,
+    "aiScore": 87,
+    "skillMatch": 90,
+    "experienceMatch": 80,
+    "projectStrength": 95,
     "strengths": ["..."],
     "gaps": ["..."],
     "reasoning": "2-3 sentence explanation of why this candidate ranked here.",

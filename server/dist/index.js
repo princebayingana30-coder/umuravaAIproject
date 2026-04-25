@@ -15,7 +15,7 @@ dotenv_1.default.config();
 const app = (0, express_1.default)();
 const PORT = process.env.PORT || 5001;
 app.use((0, cors_1.default)({
-    origin: process.env.CORS_ORIGIN ? process.env.CORS_ORIGIN.split(',') : true,
+    origin: true,
     credentials: true,
 }));
 app.use(express_1.default.json());
@@ -42,7 +42,7 @@ const MONGODB_URI = process.env.MONGODB_URI || 'mongodb://localhost:27017/talent
 mongoose_1.default.connect(MONGODB_URI)
     .then(() => console.log('✅ Connected to MongoDB'))
     .catch((err) => console.error('❌ MongoDB connection error:', err));
-app.listen(PORT, () => {
-    console.log(`🚀 Server is running on http://localhost:${PORT}`);
+app.listen(PORT, '0.0.0.0', () => {
+    console.log(`🚀 Server is running on http://0.0.0.0:${PORT}`);
 });
 exports.default = app;
