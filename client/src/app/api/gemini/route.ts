@@ -25,9 +25,7 @@ export async function POST(req: Request) {
     */
 
     return NextResponse.json({
-      success: true,
-      reply: "AI is working 🚀",
-      // In a real implementation, you'd return the 'text' from above
+      reply: "AI response working 🚀",
     });
 
   } catch (error) {
