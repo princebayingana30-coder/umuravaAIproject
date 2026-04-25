@@ -4,6 +4,7 @@ import "./globals.css";
 import Navbar from "@/components/layout/Navbar";
 import { AnimatedBackground } from "@/components/ui/AnimatedBackground";
 import { ReduxProvider } from "@/components/ReduxProvider";
+import AuthGuard from "@/components/auth/AuthGuard";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -30,10 +31,12 @@ export default function RootLayout({
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased text-slate-900 min-h-screen flex flex-col`} suppressHydrationWarning>
         <AnimatedBackground />
         <ReduxProvider>
-          <Navbar />
-          <main className="flex-1 pt-16 relative z-10">
-            {children}
-          </main>
+          <AuthGuard>
+            <Navbar />
+            <main className="flex-1 pt-16 relative z-10">
+              {children}
+            </main>
+          </AuthGuard>
         </ReduxProvider>
       </body>
     </html>

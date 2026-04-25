@@ -8,11 +8,15 @@ import { logoutUser } from '@/store/slices/authSlice';
 import { RootState, AppDispatch } from '@/store';
 import { Search, Bell, LayoutDashboard, Briefcase, LogOut, Zap, User as UserIcon, UserPlus } from 'lucide-react';
 import { motion } from 'framer-motion';
+import { usePathname } from 'next/navigation';
 
 const Navbar = () => {
   const dispatch = useDispatch<AppDispatch>();
   const router = useRouter();
+  const pathname = usePathname();
   const { user, token } = useSelector((state: RootState) => state.auth);
+
+  if (pathname === '/login') return null;
 
   const handleLogout = () => {
     dispatch(logoutUser());
@@ -34,24 +38,26 @@ const Navbar = () => {
           </span>
         </Link>
         
-        <div className="hidden md:flex items-center gap-6">
-          <Link href="/dashboard" className="text-slate-400 hover:text-white transition-colors flex items-center gap-2 text-sm font-medium group">
-            <LayoutDashboard size={18} className="group-hover:text-blue-400 transition-colors" />
-            Recruiter Dashboard
-          </Link>
-          <Link href="/candidate/profile" className="text-slate-400 hover:text-white transition-colors flex items-center gap-2 text-sm font-medium group">
-            <UserIcon size={18} className="group-hover:text-blue-400 transition-colors" />
-            Candidate Hub
-          </Link>
-          <Link href="/jobs/new" className="text-slate-400 hover:text-white transition-colors flex items-center gap-2 text-sm font-medium group">
-            <Briefcase size={18} className="group-hover:text-blue-400 transition-colors" />
-            Post Job
-          </Link>
-          <Link href="/candidates/add" className="bg-blue-600/10 border border-blue-500/30 text-blue-400 hover:bg-blue-600/20 px-4 py-2 rounded-xl transition-all flex items-center gap-2 text-sm font-bold group shadow-sm">
-            <UserPlus size={18} className="group-hover:scale-110 transition-transform" />
-            Add Candidate
-          </Link>
-        </div>
+        {token && (
+          <div className="hidden md:flex items-center gap-6">
+            <Link href="/dashboard" className="text-slate-400 hover:text-white transition-colors flex items-center gap-2 text-sm font-medium group">
+              <LayoutDashboard size={18} className="group-hover:text-blue-400 transition-colors" />
+              Recruiter Dashboard
+            </Link>
+            <Link href="/candidate/profile" className="text-slate-400 hover:text-white transition-colors flex items-center gap-2 text-sm font-medium group">
+              <UserIcon size={18} className="group-hover:text-blue-400 transition-colors" />
+              Candidate Hub
+            </Link>
+            <Link href="/jobs/new" className="text-slate-400 hover:text-white transition-colors flex items-center gap-2 text-sm font-medium group">
+              <Briefcase size={18} className="group-hover:text-blue-400 transition-colors" />
+              Post Job
+            </Link>
+            <Link href="/candidates/add" className="bg-blue-600/10 border border-blue-500/30 text-blue-400 hover:bg-blue-600/20 px-4 py-2 rounded-xl transition-all flex items-center gap-2 text-sm font-bold group shadow-sm">
+              <UserPlus size={18} className="group-hover:scale-110 transition-transform" />
+              Add Candidate
+            </Link>
+          </div>
+        )}
       </div>
 
       <div className="flex items-center gap-4">
