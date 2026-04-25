@@ -9,10 +9,16 @@
     "dev": "npx concurrently \"npm run dev:server\" \"npm run dev:client\"",
     "build:client": "cd client && npm run build",
     "build:server": "cd server && npm run build",
-    "build": "npm run build:server && npm run build:client",
+    "build": "cd client && npm run build",
+    "start": "cd client && npm run start",
     "install-all": "npm install && cd client && npm install && cd ../server && npm install"
   },
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "next": "latest",
+    "react": "latest",
+    "react-dom": "latest"
+  }
 }
